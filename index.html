@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Gruum connects to your codebase and finds design drift — styles, components, copy, and animation — then produces a shareable report an engineer or AI agent can act on."
+    />
+    <meta name="theme-color" content="#F6F3EC" />
+    <title>Gruum — Design consistency, automated</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1.5' y='1.5' width='29' height='29' rx='8' fill='%23F6F3EC' stroke='%23161512' stroke-width='1.5'/%3E%3Cpath d='M16 1.5v29M1.5 16h29' stroke='%23161512' stroke-width='1.2' opacity='.3'/%3E%3Crect x='17.2' y='17.2' width='11.3' height='11.3' rx='2.5' fill='url(%23g)'/%3E%3Cdefs%3E%3ClinearGradient id='g' x1='17' y1='17' x2='29' y2='29'%3E%3Cstop stop-color='%23F0C79A'/%3E%3Cstop offset='.5' stop-color='%23F3C7D6'/%3E%3Cstop offset='1' stop-color='%23D9C7EE'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container nav">
+        <a class="logo" href="#top" aria-label="Gruum home">
+          <svg class="logo-mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+            <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="1.5" />
+            <path d="M16 1.5v29M1.5 16h29" stroke="currentColor" stroke-width="1.15" opacity="0.32" />
+            <rect x="17.2" y="17.2" width="11.3" height="11.3" rx="2.5" fill="url(#logo-rainbow)" />
+            <defs>
+              <linearGradient id="logo-rainbow" x1="17" y1="17" x2="29" y2="29">
+                <stop stop-color="#F0C79A" />
+                <stop offset="0.5" stop-color="#F3C7D6" />
+                <stop offset="1" stop-color="#D9C7EE" />
+              </linearGradient>
+            </defs>
+          </svg>
+          <span>Gruum</span>
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+          <span class="visually-hidden">Menu</span>
+        </button>
+
+        <div id="nav-links" class="nav-links">
+          <nav class="nav-menu" aria-label="Primary">
+            <a href="#product">Product</a>
+            <a href="#how">How it works</a>
+          </nav>
+          <a class="btn btn-primary btn-sm" href="https://www.app.getgruum.com">Connect GitHub</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top">
+        <div class="hero-wash" aria-hidden="true"></div>
+        <div class="container hero-inner">
+          <p class="eyebrow">◇ Design consistency, automated</p>
+          <div class="hero-split">
+            <h1>Your design system has drift. Gruum finds it.</h1>
+            <p class="lede">
+              Every team now has a dozen sources of truth — Figma, tokens, a component library, and whatever an AI agent just vibe-coded into the repo. Gruum connects to your codebase and tells you exactly where things fell out of sync.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.app.getgruum.com">Connect your GitHub →</a>
+            <a class="btn btn-ghost" href="#sample">See a sample report</a>
+          </div>
+
+          <div class="hero-visual">
+            <article class="window report-peek" aria-label="Sample color-token finding">
+              <div class="window-bar">
+                <span class="window-dots" aria-hidden="true"></span>
+                <span class="window-url">gruum.app/report/acme-web</span>
+              </div>
+              <div class="report-peek-body">
+                <div class="report-peek-head">
+                  <p class="eyebrow">◇ Styles</p>
+                  <span class="pill pill-warn">5 issues</span>
+                </div>
+                <h3>5 near-duplicate blues found</h3>
+                <ul class="token-list">
+                  <li>
+                    <span class="swatch" style="--swatch: #2563eb"></span>
+                    <code>--blue-primary</code>
+                    <span class="muted">source</span>
+                  </li>
+                  <li>
+                    <span class="swatch" style="--swatch: #2b5cff"></span>
+                    <code>--brand-blue</code>
+                    <span class="sim sim-mint">97%</span>
+                  </li>
+                  <li>
+                    <span class="swatch" style="--swatch: #1d4ed8"></span>
+                    <code>--btn-bg</code>
+                    <span class="sim sim-pink">94%</span>
+                  </li>
+                  <li>
+                    <span class="swatch" style="--swatch: #3b82f6"></span>
+                    <code>--link</code>
+                    <span class="sim sim-lavender">91%</span>
+                  </li>
+                  <li>
+                    <span class="swatch" style="--swatch: #2080ff"></span>
+                    <code>--accent-500</code>
+                    <span class="sim">89%</span>
+                  </li>
+                </ul>
+                <p class="recommend">Recommend merge → <code>--blue-primary</code></p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section problem" id="problem">
+        <div class="container">
+          <div class="problem-copy">
+            <h2>More sources of truth, more silent drift.</h2>
+            <p>
+              Design tokens live in Figma. Components live in code. Copy lives in a doc somewhere. The more people (and agents) touch the product, the further those drift apart — and nobody notices until the product looks inconsistent. Gruum catches it before your users do.
+            </p>
+          </div>
+          <ul class="source-row">
+            <li>
+              <p class="eyebrow">◇ Figma</p>
+              <p>Tokens, type, and color styles defined in design.</p>
+            </li>
+            <li>
+              <p class="eyebrow">◇ Codebase</p>
+              <p>Components, CSS variables, and one-off implementations.</p>
+            </li>
+            <li>
+              <p class="eyebrow">◇ AI agents</p>
+              <p>Vibe-coded UI that almost matches — until it doesn’t.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="product">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">◇ Product</p>
+            <h2>One scan, four layers of consistency.</h2>
+          </header>
+          <div class="feature-grid">
+            <article>
+              <p class="eyebrow">◇ Styles</p>
+              <h3>Colors, type &amp; effects</h3>
+              <p>Finds near-duplicate colors, inconsistent text styles, and one-off shadows — and tells you which ones should merge.</p>
+            </article>
+            <article>
+              <p class="eyebrow">◇ Components</p>
+              <h3>Component drift</h3>
+              <p>Flags buttons, cards, and inputs that are “almost the same but not quite” — too many variants, or a component quietly forked in two places.</p>
+            </article>
+            <article>
+              <p class="eyebrow">◇ Copy &amp; tone</p>
+              <h3>Voice consistency</h3>
+              <p>Surfaces copy that doesn’t match your established tone — inconsistent capitalization, terminology, or button-label patterns.</p>
+            </article>
+            <article>
+              <p class="eyebrow">◇ Animation</p>
+              <h3>Motion consistency</h3>
+              <p>Catches transitions and micro-interactions that don’t match your system’s timing, easing, or motion language.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="how">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">◇ How it works</p>
+            <h2>From repo to report in minutes.</h2>
+          </header>
+          <ol class="steps">
+            <li>
+              <span class="step-num" aria-hidden="true">01</span>
+              <h3>Connect</h3>
+              <p>Log in and select a GitHub repo (or your live site/webapp).</p>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">02</span>
+              <h3>Analyze</h3>
+              <p>Gruum scans styles, components, copy, and animation for drift, duplication, and broken patterns.</p>
+            </li>
+            <li>
+              <span class="step-num" aria-hidden="true">03</span>
+              <h3>Report</h3>
+              <p>Get a shareable report with concrete recommendations: what to merge, what to delete, where the drift is — plus a <code>.md</code> file your developer (or coding agent) can feed straight back in to fix it.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section sample" id="sample">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">◇ Proof</p>
+            <h2>See what a real scan finds.</h2>
+          </header>
+
+          <div class="stats">
+            <article>
+              <p class="stat-value"><span class="accent-mint">+</span>12</p>
+              <p>color tokens flagged for merge</p>
+            </article>
+            <article>
+              <p class="stat-value">4<span class="accent-pink">hrs</span></p>
+              <p>saved vs. manual audit</p>
+            </article>
+            <article>
+              <p class="stat-value">100<span class="accent-lavender">%</span></p>
+              <p>of drift traced to a source file/line</p>
+            </article>
+          </div>
+
+          <article class="window report-full" aria-label="Sample Gruum report">
+            <div class="window-bar">
+              <span class="window-dots" aria-hidden="true"></span>
+              <span class="window-url">gruum.app/report/acme-web · scanned 2 min ago</span>
+            </div>
+            <div class="report-full-body">
+              <div class="report-meta">
+                <div>
+                  <p class="eyebrow">Repository</p>
+                  <p class="report-repo"><code>acme/acme-web</code></p>
+                </div>
+                <ul class="layer-chips">
+                  <li><span>Styles</span><strong>12</strong></li>
+                  <li><span>Components</span><strong>7</strong></li>
+                  <li><span>Copy</span><strong>9</strong></li>
+                  <li><span>Motion</span><strong>3</strong></li>
+                </ul>
+              </div>
+
+              <div class="report-layout">
+                <div class="report-table-wrap">
+                  <div class="report-table-head">
+                    <h3>Color drift — 6 near-identical blues</h3>
+                    <p class="recommend">Recommend merging into <code>--blue-primary</code></p>
+                  </div>
+                  <table class="report-table">
+                    <thead>
+                      <tr>
+                        <th>Token</th>
+                        <th>Hex</th>
+                        <th>Similarity</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #2563eb"></span>
+                            <code>--blue-primary</code>
+                          </span>
+                        </td>
+                        <td><code>#2563EB</code></td>
+                        <td>source</td>
+                        <td><span class="tag">Keep</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #2b5cff"></span>
+                            <code>--brand-blue</code>
+                          </span>
+                        </td>
+                        <td><code>#2B5CFF</code></td>
+                        <td><span class="sim sim-mint">97%</span></td>
+                        <td><span class="tag tag-merge">Merge</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #2563eb"></span>
+                            <code>--color-primary</code>
+                          </span>
+                        </td>
+                        <td><code>#2563EB</code></td>
+                        <td><span class="sim sim-mint">100%</span></td>
+                        <td><span class="tag tag-merge">Merge</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #1d4ed8"></span>
+                            <code>--btn-bg</code>
+                          </span>
+                        </td>
+                        <td><code>#1D4ED8</code></td>
+                        <td><span class="sim sim-pink">94%</span></td>
+                        <td><span class="tag tag-merge">Merge</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #3b82f6"></span>
+                            <code>--link</code>
+                          </span>
+                        </td>
+                        <td><code>#3B82F6</code></td>
+                        <td><span class="sim sim-pink">91%</span></td>
+                        <td><span class="tag tag-merge">Merge</span></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <span class="token-cell">
+                            <span class="swatch" style="--swatch: #2080ff"></span>
+                            <code>--accent-500</code>
+                          </span>
+                        </td>
+                        <td><code>#2080FF</code></td>
+                        <td><span class="sim sim-lavender">89%</span></td>
+                        <td><span class="tag tag-review">Review</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="source-line">Traced to <code>src/styles/tokens.css:18</code> · <code>src/components/Button.tsx:44</code> · <code>app/globals.css:12</code></p>
+                </div>
+
+                <aside class="report-side">
+                  <h3>Also in this scan</h3>
+                  <ul>
+                    <li>
+                      <p class="eyebrow">◇ Components</p>
+                      <p><strong>Button</strong> exists in 7 variants. Recommend consolidating to 3: primary, secondary, ghost.</p>
+                    </li>
+                    <li>
+                      <p class="eyebrow">◇ Copy &amp; tone</p>
+                      <p>CTA labels mix “Sign up”, “Get started”, and “Create account” for the same action.</p>
+                    </li>
+                    <li>
+                      <p class="eyebrow">◇ Animation</p>
+                      <p>Modal enter uses <code>200ms ease</code> in one place and <code>450ms linear</code> in another.</p>
+                    </li>
+                  </ul>
+                </aside>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section spotlight" id="export">
+        <div class="blobs" aria-hidden="true">
+          <span class="blob blob-a"></span>
+          <span class="blob blob-b"></span>
+          <span class="blob blob-c"></span>
+        </div>
+        <div class="container spotlight-inner">
+          <p class="eyebrow">◇ Feedback loop</p>
+          <h2>Not just a report. A fix your agent can run.</h2>
+          <p class="lede">
+            Every report exports as a clean <code>.md</code> file. Hand it to your developer, or feed it straight back to your coding agent, and the drift gets corrected — tokens merged, components consolidated, copy aligned.
+          </p>
+          <div class="hero-actions spotlight-actions">
+            <a class="btn btn-primary" href="https://www.app.getgruum.com">Connect your GitHub</a>
+            <a class="btn btn-ghost" href="sample-report.md" download>View a sample .md export</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section cta-band" id="connect">
+        <div class="cta-frame">
+          <div class="blobs blobs-dense" aria-hidden="true">
+            <span class="blob blob-d"></span>
+            <span class="blob blob-e"></span>
+            <span class="blob blob-f"></span>
+            <span class="blob blob-g"></span>
+          </div>
+          <div class="cta-inner">
+            <h2>Stop guessing where your design system drifted.</h2>
+            <p>One scan tells you exactly what’s inconsistent — and what to do about it.</p>
+            <a class="btn btn-primary" href="https://www.app.getgruum.com">Connect your GitHub →</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a class="logo logo-on-ink" href="#top" aria-label="Gruum home">
+            <svg class="logo-mark" width="28" height="28" viewBox="0 0 32 32" aria-hidden="true">
+              <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="1.5" />
+              <path d="M16 1.5v29M1.5 16h29" stroke="currentColor" stroke-width="1.15" opacity="0.32" />
+              <rect x="17.2" y="17.2" width="11.3" height="11.3" rx="2.5" fill="url(#logo-rainbow-foot)" />
+              <defs>
+                <linearGradient id="logo-rainbow-foot" x1="17" y1="17" x2="29" y2="29">
+                  <stop stop-color="#F0C79A" />
+                  <stop offset="0.5" stop-color="#F3C7D6" />
+                  <stop offset="1" stop-color="#D9C7EE" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Gruum</span>
+          </a>
+          <p>The consistency layer for design systems.</p>
+        </div>
+        <div class="footer-cols">
+          <div>
+            <p class="eyebrow">Product</p>
+            <a href="#how">How it works</a>
+            <a href="#sample">Sample report</a>
+          </div>
+          <div>
+            <p class="eyebrow">Company</p>
+            <a href="#top">About</a>
+          </div>
+          <div>
+            <p class="eyebrow">Legal</p>
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-base">
+        <p>© 2026 Gruum. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
