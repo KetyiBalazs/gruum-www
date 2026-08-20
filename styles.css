@@ -1250,6 +1250,84 @@ h3 {
   }
 }
 
+/* Legal pages */
+
+.legal {
+  padding-block: clamp(48px, 8vw, 96px) clamp(64px, 10vw, 128px);
+}
+
+.legal-inner {
+  max-width: 42rem;
+}
+
+.legal .eyebrow {
+  margin-bottom: var(--space-3);
+}
+
+.legal h1 {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+}
+
+.legal-updated {
+  margin: var(--space-3) 0 var(--space-6);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.legal h2 {
+  font-size: 1.35rem;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.legal h3 {
+  font-size: 1.05rem;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.legal p {
+  color: var(--text-secondary);
+}
+
+.legal p + p {
+  margin-top: var(--space-3);
+}
+
+.legal ul {
+  list-style: disc;
+  padding-left: 1.25em;
+  margin: var(--space-3) 0;
+}
+
+.legal li {
+  color: var(--text-secondary);
+}
+
+.legal li + li {
+  margin-top: 8px;
+}
+
+.legal a {
+  color: var(--accent-rust);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal a:hover {
+  color: var(--text-primary);
+}
+
+.legal strong {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.legal-caps {
+  font-size: 0.92em;
+  letter-spacing: 0.01em;
+}
+
 @media (max-width: 480px) {
   h1 {
     font-size: 2.25rem;
