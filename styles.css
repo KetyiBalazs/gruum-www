@@ -310,8 +310,20 @@ h3 {
   flex-shrink: 0;
 }
 
+.logo-mark,
+.logo-full {
+  display: block;
+  height: 28px;
+  width: auto;
+}
+
 .logo-mark {
-  color: var(--text-primary);
+  width: 28px;
+  height: 28px;
+}
+
+.logo-full {
+  height: 36px;
 }
 
 .nav-links {
