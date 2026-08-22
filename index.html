@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Gruum connects to your codebase and finds design drift — styles, components, copy, and animation — then produces a shareable report an engineer or AI agent can act on."
+      content="Gruum finds design drift — hardcoded colors, forked components, unused styles — and gives you a ready-to-run prompt to merge them back into one source of truth."
     />
     <meta name="theme-color" content="#F6F3EC" />
     <title>Gruum — Design consistency, automated</title>
@@ -24,7 +24,7 @@
     <header class="site-header">
       <div class="container nav">
         <a class="logo" href="#top" aria-label="Gruum home">
-          <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum OS" width="162" height="31" />
+          <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
         </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
@@ -50,7 +50,7 @@
           <div class="hero-split">
             <h1>Your design system has drift. Gruum finds it.</h1>
             <p class="lede">
-              Every team now has a dozen sources of truth — Figma, tokens, a component library, and whatever an AI agent just vibe-coded into the repo. Gruum connects to your codebase and tells you exactly where things fell out of sync.
+              Every scan surfaces the stuff that’s fallen out of sync — hardcoded hex colors, near-duplicate styles, components that quietly forked — and gives you a ready-to-run prompt to merge them back into one source of truth.
             </p>
           </div>
           <div class="hero-actions">
@@ -109,7 +109,7 @@
           <div class="problem-copy">
             <h2>More sources of truth, more silent drift.</h2>
             <p>
-              Design tokens live in Figma. Components live in code. Copy lives in a doc somewhere. The more people (and agents) touch the product, the further those drift apart — and nobody notices until the product looks inconsistent. Gruum catches it before your users do.
+              Design tokens live in Figma. Components live in code. Copy lives in a doc somewhere. The more people — and agents — touch the product, the further those drift apart, and nobody notices until the product looks stitched together. Gruum catches it before your users do.
             </p>
           </div>
           <ul class="source-row">
@@ -129,6 +129,53 @@
         </div>
       </section>
 
+      <section class="section personas" id="personas">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow">◇ Who it’s for</p>
+            <h2>Built for everyone who touches the system.</h2>
+          </header>
+          <div class="persona-grid">
+            <article>
+              <p class="eyebrow">◇ Design</p>
+              <h3>The design system owner</h3>
+              <p>
+                <span class="persona-label">Problem</span>
+                You maintain the source of truth, but you can’t see it drift once it ships. Every team copies a component, tweaks a color “just this once,” and six months later nobody’s sure what’s actually canonical.
+              </p>
+              <p>
+                <span class="persona-label">Solution</span>
+                Gruum scans the live product against your system and shows exactly where it diverged — so you catch drift without auditing every PR by hand.
+              </p>
+            </article>
+            <article>
+              <p class="eyebrow">◇ Engineering</p>
+              <h3>The product / frontend engineer</h3>
+              <p>
+                <span class="persona-label">Problem</span>
+                You inherit a codebase full of near-duplicate colors and quietly-forked components from months of fast shipping. Cleaning it up never makes it to the top of the backlog.
+              </p>
+              <p>
+                <span class="persona-label">Solution</span>
+                Gruum finds the duplicates and hands you a prompt that maps each one back to the right token — or merges them into a new one — so cleanup takes minutes, not a sprint.
+              </p>
+            </article>
+            <article>
+              <p class="eyebrow">◇ Agents</p>
+              <h3>The vibe coder / solo builder shipping with AI agents</h3>
+              <p>
+                <span class="persona-label">Problem</span>
+                Every feature your agent builds might invent a new hex code, spacing value, or component instead of reusing what’s already there. The drift is invisible until the product looks like five different apps stitched together.
+              </p>
+              <p>
+                <span class="persona-label">Solution</span>
+                Gruum checks each scan against your real system and gives your agent a prompt to fix what it got wrong — so it builds on what exists instead of reinventing it.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="product">
         <div class="container">
           <header class="section-head">
@@ -139,12 +186,12 @@
             <article>
               <p class="eyebrow">◇ Styles</p>
               <h3>Colors, type &amp; effects</h3>
-              <p>Finds near-duplicate colors, inconsistent text styles, and one-off shadows — and tells you which ones should merge.</p>
+              <p>Finds hardcoded hex values, near-duplicate colors, inconsistent text styles, and styles nobody’s using anymore — and tells you which should merge, and which should just go.</p>
             </article>
             <article>
               <p class="eyebrow">◇ Components</p>
               <h3>Component drift</h3>
-              <p>Flags buttons, cards, and inputs that are “almost the same but not quite” — too many variants, or a component quietly forked in two places.</p>
+              <p>Flags buttons, cards, and inputs that are almost the same but not quite — too many variants, or a component quietly forked in two places.</p>
             </article>
             <article>
               <p class="eyebrow">◇ Copy &amp; tone</p>
@@ -160,6 +207,52 @@
         </div>
       </section>
 
+      <section class="section before-after" id="proof-visual">
+        <div class="container">
+          <header class="section-head section-head-wide">
+            <p class="eyebrow">◇ Proof</p>
+            <h2>From scattered hex codes to one source of truth.</h2>
+            <p class="lede">
+              A real component, before and after a Gruum scan. Every hardcoded color gets traced back to an existing token — or, where none exists yet, merged into a new one.
+            </p>
+          </header>
+          <div class="ba-grid">
+            <figure>
+              <div class="ba-frame" aria-hidden="true">
+                <div class="ba-scene ba-scene-before">
+                  <span class="hex-chip" style="--x: 8%; --y: 12%">#2B5CFF</span>
+                  <span class="hex-chip" style="--x: 62%; --y: 8%">#2563EB</span>
+                  <span class="hex-chip" style="--x: 14%; --y: 38%">#1D4ED8</span>
+                  <span class="hex-chip" style="--x: 70%; --y: 32%">#3B82F6</span>
+                  <span class="hex-chip" style="--x: 6%; --y: 68%">#2080FF</span>
+                  <span class="hex-chip" style="--x: 58%; --y: 72%">#1E40AF</span>
+                  <span class="hex-chip" style="--x: 28%; --y: 84%">#60A5FA</span>
+                  <span class="ba-btn ba-btn-messy">Get started</span>
+                </div>
+              </div>
+              <figcaption>
+                <p class="eyebrow">Before</p>
+                <p>14 hardcoded hex values, no shared token</p>
+              </figcaption>
+            </figure>
+            <figure>
+              <div class="ba-frame" aria-hidden="true">
+                <div class="ba-scene ba-scene-after">
+                  <span class="token-chip" style="--x: 10%; --y: 14%">--brand-blue-500</span>
+                  <span class="token-chip" style="--x: 58%; --y: 18%">--brand-blue-600</span>
+                  <span class="token-chip" style="--x: 12%; --y: 72%">--brand-blue-100</span>
+                  <span class="ba-btn ba-btn-clean">Get started</span>
+                </div>
+              </div>
+              <figcaption>
+                <p class="eyebrow">After</p>
+                <p>Merged into <code>--brand-blue-500</code> and 3 related tokens</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
       <section class="section" id="how">
         <div class="container">
           <header class="section-head">
@@ -170,17 +263,17 @@
             <li>
               <span class="step-num" aria-hidden="true">01</span>
               <h3>Connect</h3>
-              <p>Log in and select a GitHub repo (or your live site/webapp).</p>
+              <p>Log in and connect your GitHub repo, or point Gruum at your live site.</p>
             </li>
             <li>
               <span class="step-num" aria-hidden="true">02</span>
-              <h3>Analyze</h3>
-              <p>Gruum scans styles, components, copy, and animation for drift, duplication, and broken patterns.</p>
+              <h3>Scan</h3>
+              <p>Gruum checks your styles, components, copy, and animation for drift, duplication, and anything that’s gone unused.</p>
             </li>
             <li>
               <span class="step-num" aria-hidden="true">03</span>
-              <h3>Report</h3>
-              <p>Get a shareable report with concrete recommendations: what to merge, what to delete, where the drift is — plus a <code>.md</code> file your developer (or coding agent) can feed straight back in to fix it.</p>
+              <h3>Prompt</h3>
+              <p>Get a report plus a ready-to-run prompt: what to merge, what to delete, and where each hardcoded value should map back to. Hand it to your developer, or feed it straight to your coding agent.</p>
             </li>
           </ol>
         </div>
@@ -345,13 +438,13 @@
         </div>
         <div class="container spotlight-inner">
           <p class="eyebrow">◇ Feedback loop</p>
-          <h2>Not just a report. A fix your agent can run.</h2>
+          <h2>Not just a report. A prompt your agent can run.</h2>
           <p class="lede">
-            Every report exports as a clean <code>.md</code> file. Hand it to your developer, or feed it straight back to your coding agent, and the drift gets corrected — tokens merged, components consolidated, copy aligned.
+            Every scan exports a ready-to-use prompt. Hand it to your developer, or feed it straight to your coding agent, and the drift gets corrected — tokens merged, duplicates removed, components consolidated.
           </p>
           <div class="hero-actions spotlight-actions">
             <a class="btn btn-primary" href="https://app.getgruum.com">Get started</a>
-            <a class="btn btn-ghost" href="sample-report.md" download>View a sample .md export</a>
+            <a class="btn btn-ghost" href="sample-prompt.md" download>View a sample prompt</a>
           </div>
         </div>
       </section>
@@ -366,7 +459,7 @@
           </div>
           <div class="cta-inner">
             <h2>Stop guessing where your design system drifted.</h2>
-            <p>One scan tells you exactly what’s inconsistent — and what to do about it.</p>
+            <p>One scan shows you exactly what’s inconsistent, with a prompt ready to fix it — so the drift shrinks instead of piling up.</p>
             <a class="btn btn-primary" href="https://app.getgruum.com">Get started</a>
           </div>
         </div>
