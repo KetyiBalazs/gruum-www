@@ -34,7 +34,7 @@
 
         <div id="nav-links" class="nav-links">
           <nav class="nav-menu" aria-label="Primary">
-            <a href="#product">Product</a>
+            <a href="#features">Product</a>
             <a href="#how">How it works</a>
           </nav>
           <a class="btn btn-primary btn-sm" href="https://app.getgruum.com">Get started</a>
@@ -59,47 +59,16 @@
           </div>
 
           <div class="hero-visual">
-            <article class="window report-peek" aria-label="Sample color-token finding">
-              <div class="window-bar">
-                <span class="window-dots" aria-hidden="true"></span>
-                <span class="window-url">gruum.app/report/acme-web</span>
-              </div>
-              <div class="report-peek-body">
-                <div class="report-peek-head">
-                  <p class="eyebrow">◇ Styles</p>
-                  <span class="pill pill-warn">5 issues</span>
-                </div>
-                <h3>5 near-duplicate blues found</h3>
-                <ul class="token-list">
-                  <li>
-                    <span class="swatch" style="--swatch: #2563eb"></span>
-                    <code>--blue-primary</code>
-                    <span class="muted">source</span>
-                  </li>
-                  <li>
-                    <span class="swatch" style="--swatch: #2b5cff"></span>
-                    <code>--brand-blue</code>
-                    <span class="sim sim-mint">97%</span>
-                  </li>
-                  <li>
-                    <span class="swatch" style="--swatch: #1d4ed8"></span>
-                    <code>--btn-bg</code>
-                    <span class="sim sim-pink">94%</span>
-                  </li>
-                  <li>
-                    <span class="swatch" style="--swatch: #3b82f6"></span>
-                    <code>--link</code>
-                    <span class="sim sim-lavender">91%</span>
-                  </li>
-                  <li>
-                    <span class="swatch" style="--swatch: #2080ff"></span>
-                    <code>--accent-500</code>
-                    <span class="sim">89%</span>
-                  </li>
-                </ul>
-                <p class="recommend">Recommend merge → <code>--blue-primary</code></p>
-              </div>
-            </article>
+            <figure class="window product-frame">
+              <img
+                src="assets/product-example.png"
+                srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
+                sizes="(max-width: 1280px) calc(100vw - 40px), 1280px"
+                alt="Gruum color drift report showing hardcoded #EF4444 mapped to --paper-danger"
+                width="1024"
+                height="721"
+              />
+            </figure>
           </div>
         </div>
       </section>
@@ -207,46 +176,123 @@
         </div>
       </section>
 
+      <section class="section" id="features">
+        <div class="container">
+          <header class="section-head section-head-wide">
+            <p class="eyebrow">◇ Features</p>
+            <h2>Identify the drift, then watch it shrink.</h2>
+            <p class="lede">
+              Gruum finds what’s out of sync, writes a prompt to fix it, and keeps a history so you can see consistency get better over time.
+            </p>
+          </header>
+
+          <div class="feature-rows">
+            <article class="feature-row">
+              <div class="feature-row-copy">
+                <p class="eyebrow">◇ Findings</p>
+                <h3>Identify the drift. Get a prompt to resolve it.</h3>
+                <p>
+                  Each scan surfaces hardcoded values, unused styles, and forked components — then writes a ready-to-run prompt with file and line, so you or your coding agent can fix them.
+                </p>
+              </div>
+              <figure class="feature-row-media">
+                <img
+                  src="assets/feature-report.png"
+                  srcset="assets/feature-report.png 750w, assets/feature-report@2x.png 1500w"
+                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
+                  alt="Color report mapping hardcoded #44C1EF to the --button-primary token, with a copyable prompt to fix"
+                  width="750"
+                  height="750"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+
+            <article class="feature-row feature-row-flip">
+              <div class="feature-row-copy">
+                <p class="eyebrow">◇ History</p>
+                <h3>See how consistency improved.</h3>
+                <p>
+                  Every scan is scored and saved. Track color, type, and component quality from last week to today — so you can tell whether the drift is shrinking or piling up.
+                </p>
+              </div>
+              <figure class="feature-row-media">
+                <img
+                  src="assets/feature-history.png"
+                  srcset="assets/feature-history.png 750w, assets/feature-history@2x.png 1500w"
+                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
+                  alt="Color style tracker showing scores rising from 32 two weeks ago to 83 today"
+                  width="750"
+                  height="750"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+
+            <article class="feature-row">
+              <div class="feature-row-copy">
+                <p class="eyebrow">◇ Setup</p>
+                <h3>Choose the environment, then choose what to test.</h3>
+                <p>
+                  Point Gruum at a live site or a GitHub repo, pick the layers to scan — colors, type, components, motion, tone — and set up the test in one step.
+                </p>
+              </div>
+              <figure class="feature-row-media">
+                <img
+                  src="assets/feature-setup.png"
+                  srcset="assets/feature-setup.png 750w, assets/feature-setup@2x.png 1500w"
+                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
+                  alt="Create a new test screen with color and text styles selected, connected to a live URL and GitHub repo"
+                  width="750"
+                  height="750"
+                  loading="lazy"
+                />
+              </figure>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section before-after" id="proof-visual">
         <div class="container">
           <header class="section-head section-head-wide">
             <p class="eyebrow">◇ Proof</p>
             <h2>From scattered hex codes to one source of truth.</h2>
             <p class="lede">
-              A real component, before and after a Gruum scan. Every hardcoded color gets traced back to an existing token — or, where none exists yet, merged into a new one.
+              A real color scan, before and after Gruum. Scattered hex values get traced back to existing tokens — or, where none exist yet, merged into new ones.
             </p>
           </header>
           <div class="ba-grid">
             <figure>
-              <div class="ba-frame" aria-hidden="true">
-                <div class="ba-scene ba-scene-before">
-                  <span class="hex-chip" style="--x: 8%; --y: 12%">#2B5CFF</span>
-                  <span class="hex-chip" style="--x: 62%; --y: 8%">#2563EB</span>
-                  <span class="hex-chip" style="--x: 14%; --y: 38%">#1D4ED8</span>
-                  <span class="hex-chip" style="--x: 70%; --y: 32%">#3B82F6</span>
-                  <span class="hex-chip" style="--x: 6%; --y: 68%">#2080FF</span>
-                  <span class="hex-chip" style="--x: 58%; --y: 72%">#1E40AF</span>
-                  <span class="hex-chip" style="--x: 28%; --y: 84%">#60A5FA</span>
-                  <span class="ba-btn ba-btn-messy">Get started</span>
-                </div>
+              <div class="ba-frame">
+                <img
+                  src="assets/before.png"
+                  srcset="assets/before.png 803w, assets/before@2x.png 1606w"
+                  sizes="(max-width: 720px) calc(100vw - 40px), 38vw"
+                  alt="Nine near-duplicate orange values scattered before a Gruum scan"
+                  width="803"
+                  height="840"
+                />
               </div>
               <figcaption>
                 <p class="eyebrow">Before</p>
-                <p>14 hardcoded hex values, no shared token</p>
+                <p>9 color drifts, no shared token</p>
               </figcaption>
             </figure>
             <figure>
-              <div class="ba-frame" aria-hidden="true">
-                <div class="ba-scene ba-scene-after">
-                  <span class="token-chip" style="--x: 10%; --y: 14%">--brand-blue-500</span>
-                  <span class="token-chip" style="--x: 58%; --y: 18%">--brand-blue-600</span>
-                  <span class="token-chip" style="--x: 12%; --y: 72%">--brand-blue-100</span>
-                  <span class="ba-btn ba-btn-clean">Get started</span>
-                </div>
+              <div class="ba-frame">
+                <img
+                  src="assets/after.png"
+                  srcset="assets/after.png 803w, assets/after@2x.png 1606w"
+                  sizes="(max-width: 720px) calc(100vw - 40px), 38vw"
+                  alt="Six orange values merged into orange-100, orange-200, and orange-300 tokens"
+                  width="803"
+                  height="840"
+                />
               </div>
               <figcaption>
                 <p class="eyebrow">After</p>
-                <p>Merged into <code>--brand-blue-500</code> and 3 related tokens</p>
+                <p>6 values merged into <code>orange-100</code>, <code>orange-200</code>, and <code>orange-300</code></p>
               </figcaption>
             </figure>
           </div>
@@ -301,132 +347,17 @@
             </article>
           </div>
 
-          <article class="window report-full" aria-label="Sample Gruum report">
-            <div class="window-bar">
-              <span class="window-dots" aria-hidden="true"></span>
-              <span class="window-url">gruum.app/report/acme-web · scanned 2 min ago</span>
-            </div>
-            <div class="report-full-body">
-              <div class="report-meta">
-                <div>
-                  <p class="eyebrow">Repository</p>
-                  <p class="report-repo"><code>acme/acme-web</code></p>
-                </div>
-                <ul class="layer-chips">
-                  <li><span>Styles</span><strong>12</strong></li>
-                  <li><span>Components</span><strong>7</strong></li>
-                  <li><span>Copy</span><strong>9</strong></li>
-                  <li><span>Motion</span><strong>3</strong></li>
-                </ul>
-              </div>
-
-              <div class="report-layout">
-                <div class="report-table-wrap">
-                  <div class="report-table-head">
-                    <h3>Color drift — 6 near-identical blues</h3>
-                    <p class="recommend">Recommend merging into <code>--blue-primary</code></p>
-                  </div>
-                  <table class="report-table">
-                    <thead>
-                      <tr>
-                        <th>Token</th>
-                        <th>Hex</th>
-                        <th>Similarity</th>
-                        <th>Action</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #2563eb"></span>
-                            <code>--blue-primary</code>
-                          </span>
-                        </td>
-                        <td><code>#2563EB</code></td>
-                        <td>source</td>
-                        <td><span class="tag">Keep</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #2b5cff"></span>
-                            <code>--brand-blue</code>
-                          </span>
-                        </td>
-                        <td><code>#2B5CFF</code></td>
-                        <td><span class="sim sim-mint">97%</span></td>
-                        <td><span class="tag tag-merge">Merge</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #2563eb"></span>
-                            <code>--color-primary</code>
-                          </span>
-                        </td>
-                        <td><code>#2563EB</code></td>
-                        <td><span class="sim sim-mint">100%</span></td>
-                        <td><span class="tag tag-merge">Merge</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #1d4ed8"></span>
-                            <code>--btn-bg</code>
-                          </span>
-                        </td>
-                        <td><code>#1D4ED8</code></td>
-                        <td><span class="sim sim-pink">94%</span></td>
-                        <td><span class="tag tag-merge">Merge</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #3b82f6"></span>
-                            <code>--link</code>
-                          </span>
-                        </td>
-                        <td><code>#3B82F6</code></td>
-                        <td><span class="sim sim-pink">91%</span></td>
-                        <td><span class="tag tag-merge">Merge</span></td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <span class="token-cell">
-                            <span class="swatch" style="--swatch: #2080ff"></span>
-                            <code>--accent-500</code>
-                          </span>
-                        </td>
-                        <td><code>#2080FF</code></td>
-                        <td><span class="sim sim-lavender">89%</span></td>
-                        <td><span class="tag tag-review">Review</span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <p class="source-line">Traced to <code>src/styles/tokens.css:18</code> · <code>src/components/Button.tsx:44</code> · <code>app/globals.css:12</code></p>
-                </div>
-
-                <aside class="report-side">
-                  <h3>Also in this scan</h3>
-                  <ul>
-                    <li>
-                      <p class="eyebrow">◇ Components</p>
-                      <p><strong>Button</strong> exists in 7 variants. Recommend consolidating to 3: primary, secondary, ghost.</p>
-                    </li>
-                    <li>
-                      <p class="eyebrow">◇ Copy &amp; tone</p>
-                      <p>CTA labels mix “Sign up”, “Get started”, and “Create account” for the same action.</p>
-                    </li>
-                    <li>
-                      <p class="eyebrow">◇ Animation</p>
-                      <p>Modal enter uses <code>200ms ease</code> in one place and <code>450ms linear</code> in another.</p>
-                    </li>
-                  </ul>
-                </aside>
-              </div>
-            </div>
-          </article>
+          <figure class="window product-frame product-frame-lg">
+            <img
+              src="assets/product-example.png"
+              srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
+              sizes="(max-width: 1280px) calc(100vw - 40px), 1280px"
+              alt="Full Gruum color report with score 83, hardcoded values, file locations, and a prompt to fix"
+              width="1024"
+              height="721"
+              loading="lazy"
+            />
+          </figure>
         </div>
       </section>
 
