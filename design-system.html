@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Gruum marketing design system — color, type, and components used on getgruum.com." />
+    <meta name="theme-color" content="#F5F5F2" />
+    <title>Design system — Gruum</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        var theme = new URLSearchParams(location.search).get("theme");
+        if (theme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#131210");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=8" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="mobile-bar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </header>
+
+    <aside id="site-sidebar" class="site-sidebar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <nav class="side-nav" aria-label="Primary">
+        <a href="index.html#top">Overview</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#features">Features</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="side-cta">
+        <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
+        <a href="sample.html">Sample report</a>
+      </div>
+      <div class="side-foot">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="design-system.html" aria-current="page">Design system</a>
+        <p>© 2026 Gruum</p>
+      </div>
+    </aside>
+
+    <main id="main" class="page-col">
+      <article class="wrap ds">
+        <p class="eyebrow">Reference</p>
+        <h1>Design system</h1>
+        <p class="legal-updated">Live tokens from getgruum.com</p>
+        <p>
+          The marketing site is a quiet paper page with one lime wash, hairline dashed rails, and a 160px left sidebar. Color is rationed. Type never goes below 10px.
+        </p>
+        <p class="ds-rule">Minimum type size: 10px. Labels, badges, captions, and <code>code</code> clamp to this floor.</p>
+
+        <h2>Color</h2>
+        <p>Foundation tokens. 90% of the page is paper + ink + hairlines.</p>
+        <div class="swatch-grid">
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--paper)"></div>
+            <p>--paper · #F5F5F2</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--paper-pure)"></div>
+            <p>--paper-pure · #FBFBF8</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--surface-muted)"></div>
+            <p>--surface-muted · #E7E7E3</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--text-strong)"></div>
+            <p>--text-strong · #1D1313</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--text-secondary)"></div>
+            <p>--text-secondary · #493A3A</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--border-card)"></div>
+            <p>--border-card · #DEE2DE</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--accent)"></div>
+            <p>--accent · #EF4444</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--highlight)"></div>
+            <p>--highlight · #BBF451</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--link)"></div>
+            <p>--link · #A76451</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--link-mark)"></div>
+            <p>--link-mark · #FFF7B1</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--page-wash-beige)"></div>
+            <p>--page-wash-beige</p>
+          </div>
+          <div class="swatch">
+            <div class="swatch-chip" style="background: var(--page-wash-lime)"></div>
+            <p>--page-wash-lime</p>
+          </div>
+        </div>
+
+        <h2>Type</h2>
+        <p>Inter for UI and headlines. IBM Plex Mono for labels and code. Smallest size is 12px labels, floored at 10px.</p>
+        <div class="ds-type">
+          <p class="eyebrow">Eyebrow · tagline</p>
+          <h1>Display headline</h1>
+          <h2>Section headline</h2>
+          <p class="item-title">Card title</p>
+          <p class="lede">Lede. One or two lines of supporting copy under a headline.</p>
+          <p>Body copy at description size. Used for paragraphs, cards, and FAQ answers.</p>
+          <p class="step-idx">Step index · uppercase</p>
+          <p><code>code · token or file path</code></p>
+        </div>
+
+        <h2>Buttons</h2>
+        <div class="ds-row">
+          <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
+          <a class="btn btn--secondary" href="sample.html">See a sample report</a>
+          <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
+        </div>
+
+        <h2>Components</h2>
+        <p class="step-idx">Unlimited · all plans</p>
+        <div class="card-grid" style="margin-top: 12px">
+          <article class="card">
+            <p class="item-title">Card</p>
+            <p>Paper-pure surface, 16px radius, hairline border. Title + body. No drop shadow.</p>
+          </article>
+        </div>
+        <ul class="source-row" aria-label="Pills">
+          <li>Figma</li>
+          <li>GitHub</li>
+          <li>Canva</li>
+        </ul>
+        <p class="step-idx" style="margin-top: 24px">Pro <span class="price-badge">Most popular</span></p>
+
+        <h2>Layout</h2>
+        <p>
+          Desktop shell: fixed 160px sidebar, 32px gap, 640px content column with dashed rails. Mobile: 56px top bar and a full-screen menu. Section bands use dashed hairline dividers, not boxed containers.
+        </p>
+      </article>
+    </main>
+
+    <script src="script.js?v=5"></script>
+  </body>
+</html>

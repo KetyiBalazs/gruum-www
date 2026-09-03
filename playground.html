@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Gruum theme playground — preview the marketing site in light and dark." />
+    <meta name="theme-color" content="#131210" />
+    <title>Playground — Gruum</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=6" />
+  </head>
+  <body class="playground">
+    <header class="playground-bar">
+      <strong>Playground</strong>
+      <div class="playground-controls">
+        <button type="button" data-theme-btn="light">Light</button>
+        <button type="button" class="is-active" data-theme-btn="dark">Dark</button>
+      </div>
+      <a href="index.html">Open live site</a>
+    </header>
+    <iframe
+      class="playground-frame"
+      id="preview"
+      src="index.html?theme=dark"
+      title="Gruum homepage preview"
+    ></iframe>
+    <script>
+      const frame = document.getElementById("preview");
+      const buttons = [...document.querySelectorAll("[data-theme-btn]")];
+      const setTheme = (theme) => {
+        frame.src = "index.html?theme=" + theme;
+        buttons.forEach((btn) => {
+          btn.classList.toggle("is-active", btn.dataset.themeBtn === theme);
+        });
+        document.documentElement.setAttribute("data-theme", theme === "dark" ? "dark" : "light");
+        document.querySelector('meta[name="theme-color"]').setAttribute(
+          "content",
+          theme === "dark" ? "#131210" : "#F5F5F2",
+        );
+      };
+      buttons.forEach((btn) => {
+        btn.addEventListener("click", () => setTheme(btn.dataset.themeBtn));
+      });
+    </script>
+  </body>
+</html>

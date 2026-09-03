@@ -4,44 +4,67 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Privacy Policy for Gruum — how we collect, use, and share information." />
-    <meta name="theme-color" content="#F6F3EC" />
+    <meta name="theme-color" content="#F5F5F2" />
     <title>Privacy Policy — Gruum</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;1,14..32,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var theme = new URLSearchParams(location.search).get("theme");
+        if (theme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#131210");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <div class="container nav">
-        <a class="logo" href="index.html" aria-label="Gruum home">
-          <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
-        </a>
-
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-
-        <div id="nav-links" class="nav-links">
-          <nav class="nav-menu" aria-label="Primary">
-            <a href="index.html#features">Product</a>
-            <a href="index.html#how">How it works</a>
-          </nav>
-          <a class="btn btn-primary btn-sm" href="https://app.getgruum.com">Get started</a>
-        </div>
-      </div>
+    <header class="mobile-bar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
     </header>
 
-    <main id="main" class="legal">
-      <article class="container legal-inner">
-        <p class="eyebrow">◇ Legal</p>
+    <aside id="site-sidebar" class="site-sidebar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <nav class="side-nav" aria-label="Primary">
+        <a href="index.html#top">Overview</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#features">Features</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="side-cta">
+        <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
+        <a href="sample.html">Sample report</a>
+      </div>
+      <div class="side-foot">
+        <a href="privacy.html" aria-current="page">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="design-system.html">Design system</a>
+        <p>© 2026 Gruum</p>
+      </div>
+    </aside>
+
+    <main id="main" class="page-col">
+      <article class="wrap legal">
         <h1>Privacy Policy</h1>
         <p class="legal-updated">Last updated: August 19, 2026</p>
 
@@ -177,38 +200,6 @@
       </article>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <a class="logo logo-on-ink" href="index.html" aria-label="Gruum home">
-            <img class="logo-mark" src="assets/gruum-icon.png" alt="" width="28" height="28" />
-            <span>Gruum</span>
-          </a>
-          <p>The consistency layer for design systems.</p>
-        </div>
-        <div class="footer-cols">
-          <div>
-            <p class="eyebrow">Product</p>
-            <a href="index.html#how">How it works</a>
-            <a href="index.html#sample">Sample report</a>
-          </div>
-          <div>
-            <p class="eyebrow">Company</p>
-            <a href="index.html">About</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div>
-            <p class="eyebrow">Legal</p>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-          </div>
-        </div>
-      </div>
-      <div class="container footer-base">
-        <p>© 2026 Gruum. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>

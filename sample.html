@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A sample Gruum scan — hardcoded colors, forked components, and a ready-to-run prompt to merge them back into one source of truth."
+    />
+    <meta name="theme-color" content="#F5F5F2" />
+    <title>Sample report — Gruum</title>
+    <link rel="icon" href="assets/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function () {
+        var theme = new URLSearchParams(location.search).get("theme");
+        if (theme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#131210");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=7" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="mobile-bar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </header>
+
+    <aside id="site-sidebar" class="site-sidebar">
+      <a class="logo" href="index.html" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <nav class="side-nav" aria-label="Primary">
+        <a href="index.html#top">Overview</a>
+        <a href="index.html#how">How it works</a>
+        <a href="index.html#features">Features</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+      </nav>
+      <div class="side-cta">
+        <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
+        <a href="sample.html" class="is-active">Sample report</a>
+      </div>
+      <div class="side-foot">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="design-system.html">Design system</a>
+        <p>© 2026 Gruum</p>
+      </div>
+    </aside>
+
+    <main id="main" class="page-col">
+      <article class="wrap report">
+        <h1>See what a real scan finds.</h1>
+        <p class="legal-updated">acme/acme-web · scanned 2026-08-19 · 4 layers · 31 findings</p>
+        <p>
+          Use this as a punch list. Each finding includes a file/line, a recommended action, and enough context for a developer or coding agent to apply the change.
+        </p>
+
+        <ul class="stats">
+          <li>
+            <p class="stat-value">+12</p>
+            <p>color tokens flagged for merge</p>
+          </li>
+          <li>
+            <p class="stat-value">4 hrs</p>
+            <p>saved vs. manual audit</p>
+          </li>
+          <li>
+            <p class="stat-value">100%</p>
+            <p>of drift traced to a source file/line</p>
+          </li>
+        </ul>
+
+        <figure class="media-stage">
+          <img
+            src="assets/product-example.png"
+            srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
+            sizes="(max-width: 640px) 100vw, 560px"
+            alt="Full Gruum color report with score 83, hardcoded values, file locations, and a prompt to fix"
+            width="1024"
+            height="721"
+          />
+        </figure>
+
+        <h2>Styles</h2>
+        <h3>Color tokens — merge 6 near-identical blues into <code>--blue-primary</code></h3>
+        <p>Canonical token: <code>--blue-primary: #2563EB</code> (<code>src/styles/tokens.css:18</code>)</p>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Token</th>
+                <th>Hex</th>
+                <th>Similarity</th>
+                <th>File</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>--blue-primary</code></td>
+                <td><code>#2563EB</code></td>
+                <td>source</td>
+                <td><code>src/styles/tokens.css:18</code></td>
+                <td>Keep</td>
+              </tr>
+              <tr>
+                <td><code>--brand-blue</code></td>
+                <td><code>#2B5CFF</code></td>
+                <td>97%</td>
+                <td><code>src/styles/tokens.css:24</code></td>
+                <td>Merge into <code>--blue-primary</code> and delete</td>
+              </tr>
+              <tr>
+                <td><code>--color-primary</code></td>
+                <td><code>#2563EB</code></td>
+                <td>100%</td>
+                <td><code>app/globals.css:12</code></td>
+                <td>Alias or delete; duplicate of source</td>
+              </tr>
+              <tr>
+                <td><code>--btn-bg</code></td>
+                <td><code>#1D4ED8</code></td>
+                <td>94%</td>
+                <td><code>src/components/Button.tsx:44</code></td>
+                <td>Replace with <code>--blue-primary</code></td>
+              </tr>
+              <tr>
+                <td><code>--link</code></td>
+                <td><code>#3B82F6</code></td>
+                <td>91%</td>
+                <td><code>src/styles/tokens.css:41</code></td>
+                <td>Merge into <code>--blue-primary</code></td>
+              </tr>
+              <tr>
+                <td><code>--accent-500</code></td>
+                <td><code>#2080FF</code></td>
+                <td>89%</td>
+                <td><code>src/styles/accents.css:7</code></td>
+                <td>Review: slightly cooler; confirm before merge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          Also flagged: 4 near-duplicate neutrals (<code>--gray-100</code> / <code>--bg-subtle</code> / <code>--surface-2</code> / <code>--canvas</code>) and 2 one-off shadows that do not match <code>--shadow-sm</code>.
+        </p>
+
+        <h2>Components</h2>
+        <h3>Button — 7 variants, recommend 3</h3>
+        <p>Found implementations in <code>src/components/Button.tsx</code>, <code>src/ui/PrimaryButton.tsx</code>, <code>app/marketing/Cta.tsx</code>.</p>
+        <p>Keep: <code>primary</code>, <code>secondary</code>, <code>ghost</code>.</p>
+        <p>Delete or fold in:</p>
+        <ul>
+          <li><code>solid</code> → <code>primary</code></li>
+          <li><code>outline</code> → <code>secondary</code></li>
+          <li><code>link-button</code> → <code>ghost</code></li>
+          <li><code>marketing-cta</code> → <code>primary</code> with size <code>lg</code></li>
+        </ul>
+        <p>The marketing CTA uses 14px / 600 weight; the system button is 15px / 500. Align to the system button.</p>
+        <h3>Card — two forks</h3>
+        <p>
+          <code>src/components/Card.tsx</code> and <code>src/patterns/Panel.tsx</code> share layout, padding, and radius but diverge on border (<code>1px #E5E2D8</code> vs <code>1px #DEDACE</code>) and shadow. Treat <code>Card</code> as canonical; migrate <code>Panel</code> callers.
+        </p>
+
+        <h2>Copy &amp; tone</h2>
+        <p>Inconsistent CTA labels for the same action (sign-up):</p>
+        <ul>
+          <li>“Sign up” — <code>app/header.tsx:32</code></li>
+          <li>“Get started” — <code>app/pricing/page.tsx:88</code></li>
+          <li>“Create account” — <code>src/components/AuthForm.tsx:19</code></li>
+        </ul>
+        <p>Recommend one label: <strong>Create account</strong> (sentence case, verb-first). Apply the same pattern to empty states (“No projects yet” vs “You don’t have any projects”).</p>
+        <p>Title case appears on 11 buttons; sentence case on 19. Follow sentence case to match the product UI.</p>
+
+        <h2>Animation</h2>
+        <p>Modal enter:</p>
+        <ul>
+          <li><code>src/components/Modal.tsx</code> — <code>200ms ease</code></li>
+          <li><code>src/overlays/Dialog.tsx</code> — <code>450ms linear</code></li>
+        </ul>
+        <p>Recommend: <code>200ms cubic-bezier(0.2, 0.8, 0.2, 1)</code> for enter, <code>160ms ease</code> for exit. Replace the linear 450ms dialog motion; it reads as a different product.</p>
+        <p>Hover on primary buttons is instant in marketing pages and <code>120ms</code> in app chrome. Use <code>160ms ease</code> everywhere.</p>
+
+        <h2>Suggested agent prompt</h2>
+        <p>
+          Apply the Gruum findings in this file. Merge the listed color tokens into <code>--blue-primary</code>, consolidate Button to primary/secondary/ghost, migrate Panel to Card, standardize signup CTAs to “Create account”, and align modal/button motion to the recommended timing. Do not invent new tokens. Open a PR with one commit per layer (styles, components, copy, motion).
+        </p>
+
+        <div class="cta-links">
+          <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
+          <a class="btn btn--secondary" href="sample-prompt.md" download>View a sample prompt</a>
+          <a class="btn btn--secondary" href="sample-report.md" download>Download as markdown</a>
+        </div>
+      </article>
+    </main>
+
+    <script src="script.js?v=5"></script>
+  </body>
+</html>

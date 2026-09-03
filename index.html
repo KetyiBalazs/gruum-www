@@ -5,430 +5,462 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Gruum finds design drift — hardcoded colors, forked components, unused styles — and gives you a ready-to-run prompt to merge them back into one source of truth."
+      content="Gruum is the visual and design consistency layer for products — connecting Figma, GitHub, Canva, AI agents, and copy docs so drift is visible before it ships."
     />
-    <meta name="theme-color" content="#F6F3EC" />
+    <meta name="theme-color" content="#F5F5F2" />
     <title>Gruum — Design consistency, automated</title>
     <link rel="icon" href="assets/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;1,14..32,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        var theme = new URLSearchParams(location.search).get("theme");
+        if (theme === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute("content", "#131210");
+        }
+      })();
+    </script>
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header">
-      <div class="container nav">
-        <a class="logo" href="#top" aria-label="Gruum home">
-          <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
-        </a>
-
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
-          <span class="nav-toggle-bars" aria-hidden="true"></span>
-          <span class="visually-hidden">Menu</span>
-        </button>
-
-        <div id="nav-links" class="nav-links">
-          <nav class="nav-menu" aria-label="Primary">
-            <a href="#features">Product</a>
-            <a href="#how">How it works</a>
-          </nav>
-          <a class="btn btn-primary btn-sm" href="https://app.getgruum.com">Get started</a>
-        </div>
-      </div>
+    <header class="mobile-bar">
+      <a class="logo" href="#top" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
     </header>
 
-    <main id="main">
-      <section class="hero" id="top">
-        <div class="hero-wash" aria-hidden="true"></div>
-        <div class="container hero-inner">
-          <p class="eyebrow">◇ Design consistency, automated</p>
-          <div class="hero-split">
-            <h1>Your design system has drift. Gruum finds it.</h1>
-            <p class="lede">
-              Every scan surfaces the stuff that’s fallen out of sync — hardcoded hex colors, near-duplicate styles, components that quietly forked — and gives you a ready-to-run prompt to merge them back into one source of truth.
-            </p>
-          </div>
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="https://app.getgruum.com">Get started</a>
-            <a class="btn btn-ghost" href="#sample">See a sample report</a>
-          </div>
+    <aside id="site-sidebar" class="site-sidebar">
+      <a class="logo" href="#top" aria-label="Gruum home">
+        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
+      </a>
+      <nav class="side-nav" aria-label="Primary">
+        <a href="#top" data-nav="top">Overview</a>
+        <a href="#how" data-nav="how">How it works</a>
+        <a href="#features" data-nav="features">Features</a>
+        <a href="manifesto.html">Manifesto</a>
+        <a href="#pricing" data-nav="pricing">Pricing</a>
+        <a href="#faq" data-nav="faq">FAQ</a>
+      </nav>
+      <div class="side-cta">
+        <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
+        <a href="sample.html">Sample report</a>
+      </div>
+      <div class="side-foot">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="contact.html">Contact</a>
+        <a href="design-system.html">Design system</a>
+        <p>© 2026 Gruum</p>
+      </div>
+    </aside>
 
-          <div class="hero-visual">
-            <figure class="window product-frame">
-              <img
-                src="assets/product-example.png"
-                srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
-                sizes="(max-width: 1280px) calc(100vw - 40px), 1280px"
-                alt="Gruum color drift report showing hardcoded #EF4444 mapped to --paper-danger"
-                width="1024"
-                height="721"
-              />
-            </figure>
+    <main id="main" class="page-col">
+      <section class="hero" id="top">
+        <div class="wrap wrap--hero">
+          <p class="eyebrow">Design consistency layer</p>
+          <h1>Catch design drift before it ships.</h1>
+          <p class="lede">
+            Gruum scans Figma, GitHub, Canva, and your agent rules — then shows what’s inconsistent, with a prompt ready to fix it.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
+            <a class="btn btn--secondary" href="sample.html">See a sample report</a>
           </div>
+        </div>
+        <div class="wrap">
+          <figure class="media-stage">
+            <img
+              src="assets/product-example.png"
+              srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
+              sizes="(max-width: 1080px) 100vw, 1080px"
+              alt="Gruum color drift report showing hardcoded #EF4444 mapped to --paper-danger"
+              width="1024"
+              height="721"
+            />
+          </figure>
         </div>
       </section>
 
-      <section class="section problem" id="problem">
-        <div class="container">
-          <div class="problem-copy">
-            <h2>More sources of truth, more silent drift.</h2>
-            <p>
-              Design tokens live in Figma. Components live in code. Copy lives in a doc somewhere. The more people — and agents — touch the product, the further those drift apart, and nobody notices until the product looks stitched together. Gruum catches it before your users do.
-            </p>
-          </div>
-          <ul class="source-row">
-            <li>
-              <p class="eyebrow">◇ Figma</p>
-              <p>Tokens, type, and color styles defined in design.</p>
-            </li>
-            <li>
-              <p class="eyebrow">◇ Codebase</p>
-              <p>Components, CSS variables, and one-off implementations.</p>
-            </li>
-            <li>
-              <p class="eyebrow">◇ AI agents</p>
-              <p>Vibe-coded UI that almost matches — until it doesn’t.</p>
-            </li>
+      <section class="band" id="problem">
+        <div class="wrap wrap--narrow">
+          <h2>Everyone kept a different source of truth.</h2>
+          <p class="section-lede">
+            Marketing owns color in Canva. Design owns components in Figma. Engineering owns the button in GitHub. Agents invent values the <code>CLAUDE.md</code> never mentioned. Drift is invisible until it ships.
+          </p>
+          <ul class="source-row" aria-label="Connected sources">
+            <li>Figma</li>
+            <li>GitHub</li>
+            <li>Canva</li>
+            <li>CLAUDE.md</li>
+            <li>Style docs</li>
           </ul>
         </div>
       </section>
 
-      <section class="section personas" id="personas">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">◇ Who it’s for</p>
-            <h2>Built for everyone who touches the system.</h2>
+      <section class="band" id="audience">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>Who it’s for</h2>
+            <p class="section-lede">If you own a piece of the system — or have to ship it anyway — Gruum is the shared layer underneath.</p>
           </header>
-          <div class="persona-grid">
-            <article>
-              <p class="eyebrow">◇ Design</p>
-              <h3>The design system owner</h3>
-              <p>
-                <span class="persona-label">Problem</span>
-                You maintain the source of truth, but you can’t see it drift once it ships. Every team copies a component, tweaks a color “just this once,” and six months later nobody’s sure what’s actually canonical.
-              </p>
-              <p>
-                <span class="persona-label">Solution</span>
-                Gruum scans the live product against your system and shows exactly where it diverged — so you catch drift without auditing every PR by hand.
-              </p>
+          <div class="card-grid card-grid--2">
+            <article class="card">
+              <p class="item-title">Designers</p>
+              <p>The live product doesn’t match the file you shipped. Downstream changes never make it back.</p>
+              <p class="card-solve">Gruum diffs production against your Figma library so you catch drift without sitting in every review.</p>
             </article>
-            <article>
-              <p class="eyebrow">◇ Engineering</p>
-              <h3>The product / frontend engineer</h3>
-              <p>
-                <span class="persona-label">Problem</span>
-                You inherit a codebase full of near-duplicate colors and quietly-forked components from months of fast shipping. Cleaning it up never makes it to the top of the backlog.
-              </p>
-              <p>
-                <span class="persona-label">Solution</span>
-                Gruum finds the duplicates and hands you a prompt that maps each one back to the right token — or merges them into a new one — so cleanup takes minutes, not a sprint.
-              </p>
+            <article class="card">
+              <p class="item-title">Developers</p>
+              <p>New UI lands with no easy way to see impact. Near-duplicate styles and components just keep growing.</p>
+              <p class="card-solve">Each finding maps to a file and line, plus a prompt to merge, replace, or delete.</p>
             </article>
-            <article>
-              <p class="eyebrow">◇ Agents</p>
-              <h3>The vibe coder / solo builder shipping with AI agents</h3>
-              <p>
-                <span class="persona-label">Problem</span>
-                Every feature your agent builds might invent a new hex code, spacing value, or component instead of reusing what’s already there. The drift is invisible until the product looks like five different apps stitched together.
-              </p>
-              <p>
-                <span class="persona-label">Solution</span>
-                Gruum checks each scan against your real system and gives your agent a prompt to fix what it got wrong — so it builds on what exists instead of reinventing it.
-              </p>
+            <article class="card">
+              <p class="item-title">Builders</p>
+              <p>Agents ship fast while rules sit unused. The model invents values instead of following the system.</p>
+              <p class="card-solve">Gruum checks the output against real sources and returns a prompt the agent can actually run.</p>
+            </article>
+            <article class="card">
+              <p class="item-title">Managers</p>
+              <p>The final UI doesn’t match what was expected. Every team stored “the” source of truth in a different tool.</p>
+              <p class="card-solve">One scan shows the drift, the cleanup, and whether consistency is getting better.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="product">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">◇ Product</p>
-            <h2>One scan, four layers of consistency.</h2>
-          </header>
-          <div class="feature-grid">
-            <article>
-              <p class="eyebrow">◇ Styles</p>
-              <h3>Colors, type &amp; effects</h3>
-              <p>Finds hardcoded hex values, near-duplicate colors, inconsistent text styles, and styles nobody’s using anymore — and tells you which should merge, and which should just go.</p>
-            </article>
-            <article>
-              <p class="eyebrow">◇ Components</p>
-              <h3>Component drift</h3>
-              <p>Flags buttons, cards, and inputs that are almost the same but not quite — too many variants, or a component quietly forked in two places.</p>
-            </article>
-            <article>
-              <p class="eyebrow">◇ Copy &amp; tone</p>
-              <h3>Voice consistency</h3>
-              <p>Surfaces copy that doesn’t match your established tone — inconsistent capitalization, terminology, or button-label patterns.</p>
-            </article>
-            <article>
-              <p class="eyebrow">◇ Animation</p>
-              <h3>Motion consistency</h3>
-              <p>Catches transitions and micro-interactions that don’t match your system’s timing, easing, or motion language.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="features">
-        <div class="container">
-          <header class="section-head section-head-wide">
-            <p class="eyebrow">◇ Features</p>
-            <h2>Identify the drift, then watch it shrink.</h2>
-            <p class="lede">
-              Gruum finds what’s out of sync, writes a prompt to fix it, and keeps a history so you can see consistency get better over time.
-            </p>
-          </header>
-
-          <div class="feature-rows">
-            <article class="feature-row">
-              <div class="feature-row-copy">
-                <p class="eyebrow">◇ Findings</p>
-                <h3>Identify the drift. Get a prompt to resolve it.</h3>
-                <p>
-                  Each scan surfaces hardcoded values, unused styles, and forked components — then writes a ready-to-run prompt with file and line, so you or your coding agent can fix them.
-                </p>
-              </div>
-              <figure class="feature-row-media">
-                <img
-                  src="assets/feature-report.png"
-                  srcset="assets/feature-report.png 750w, assets/feature-report@2x.png 1500w"
-                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
-                  alt="Color report mapping hardcoded #44C1EF to the --button-primary token, with a copyable prompt to fix"
-                  width="750"
-                  height="750"
-                  loading="lazy"
-                />
-              </figure>
-            </article>
-
-            <article class="feature-row feature-row-flip">
-              <div class="feature-row-copy">
-                <p class="eyebrow">◇ History</p>
-                <h3>See how consistency improved.</h3>
-                <p>
-                  Every scan is scored and saved. Track color, type, and component quality from last week to today — so you can tell whether the drift is shrinking or piling up.
-                </p>
-              </div>
-              <figure class="feature-row-media">
-                <img
-                  src="assets/feature-history.png"
-                  srcset="assets/feature-history.png 750w, assets/feature-history@2x.png 1500w"
-                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
-                  alt="Color style tracker showing scores rising from 32 two weeks ago to 83 today"
-                  width="750"
-                  height="750"
-                  loading="lazy"
-                />
-              </figure>
-            </article>
-
-            <article class="feature-row">
-              <div class="feature-row-copy">
-                <p class="eyebrow">◇ Setup</p>
-                <h3>Choose the environment, then choose what to test.</h3>
-                <p>
-                  Point Gruum at a live site or a GitHub repo, pick the layers to scan — colors, type, components, motion, tone — and set up the test in one step.
-                </p>
-              </div>
-              <figure class="feature-row-media">
-                <img
-                  src="assets/feature-setup.png"
-                  srcset="assets/feature-setup.png 750w, assets/feature-setup@2x.png 1500w"
-                  sizes="(max-width: 960px) calc(100vw - 40px), 40vw"
-                  alt="Create a new test screen with color and text styles selected, connected to a live URL and GitHub repo"
-                  width="750"
-                  height="750"
-                  loading="lazy"
-                />
-              </figure>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="section before-after" id="proof-visual">
-        <div class="container">
-          <header class="section-head section-head-wide">
-            <p class="eyebrow">◇ Proof</p>
-            <h2>From scattered hex codes to one source of truth.</h2>
-            <p class="lede">
-              A real color scan, before and after Gruum. Scattered hex values get traced back to existing tokens — or, where none exist yet, merged into new ones.
-            </p>
-          </header>
-          <div class="ba-grid">
-            <figure>
-              <div class="ba-frame">
-                <img
-                  src="assets/before.png"
-                  srcset="assets/before.png 803w, assets/before@2x.png 1606w"
-                  sizes="(max-width: 720px) calc(100vw - 40px), 38vw"
-                  alt="Nine near-duplicate orange values scattered before a Gruum scan"
-                  width="803"
-                  height="840"
-                />
-              </div>
-              <figcaption>
-                <p class="eyebrow">Before</p>
-                <p>9 color drifts, no shared token</p>
-              </figcaption>
-            </figure>
-            <figure>
-              <div class="ba-frame">
-                <img
-                  src="assets/after.png"
-                  srcset="assets/after.png 803w, assets/after@2x.png 1606w"
-                  sizes="(max-width: 720px) calc(100vw - 40px), 38vw"
-                  alt="Six orange values merged into orange-100, orange-200, and orange-300 tokens"
-                  width="803"
-                  height="840"
-                />
-              </div>
-              <figcaption>
-                <p class="eyebrow">After</p>
-                <p>6 values merged into <code>orange-100</code>, <code>orange-200</code>, and <code>orange-300</code></p>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="how">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">◇ How it works</p>
-            <h2>From repo to report in minutes.</h2>
+      <section class="band" id="how">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>How it works</h2>
+            <p class="section-lede">From the sources you already have to a shared layer, in minutes.</p>
           </header>
           <ol class="steps">
             <li>
-              <span class="step-num" aria-hidden="true">01</span>
+              <span class="step-idx">[ 01 ]</span>
               <h3>Connect</h3>
-              <p>Log in and connect your GitHub repo, or point Gruum at your live site.</p>
+              <p>Point Gruum at GitHub, a live site, Figma, style docs, or an agent rules file.</p>
             </li>
             <li>
-              <span class="step-num" aria-hidden="true">02</span>
+              <span class="step-idx">[ 02 ]</span>
               <h3>Scan</h3>
-              <p>Gruum checks your styles, components, copy, and animation for drift, duplication, and anything that’s gone unused.</p>
+              <p>It checks styles, components, copy, and motion for drift, duplicates, and anything unused.</p>
             </li>
             <li>
-              <span class="step-num" aria-hidden="true">03</span>
+              <span class="step-idx">[ 03 ]</span>
               <h3>Prompt</h3>
-              <p>Get a report plus a ready-to-run prompt: what to merge, what to delete, and where each hardcoded value should map back to. Hand it to your developer, or feed it straight to your coding agent.</p>
+              <p>You get a report plus a ready-to-run prompt — for a developer, or straight into your coding agent.</p>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="section sample" id="sample">
-        <div class="container">
-          <header class="section-head">
-            <p class="eyebrow">◇ Proof</p>
-            <h2>See what a real scan finds.</h2>
+      <section class="band" id="features">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>What a scan actually does</h2>
+            <p class="section-lede">One pass across every connected source. Four layers. A prompt you can run.</p>
           </header>
-
-          <div class="stats">
-            <article>
-              <p class="stat-value"><span class="accent-mint">+</span>12</p>
-              <p>color tokens flagged for merge</p>
+          <div class="card-grid card-grid--3">
+            <article class="card">
+              <p class="step-idx">Unlimited · all plans</p>
+              <p class="item-title">Find the drift</p>
+              <p>Hardcoded hex, near-duplicate tokens, forked buttons, off-tone copy, timing that doesn’t match the system.</p>
             </article>
-            <article>
-              <p class="stat-value">4<span class="accent-pink">hrs</span></p>
-              <p>saved vs. manual audit</p>
+            <article class="card">
+              <p class="item-title">Get a runnable prompt</p>
+              <p>Each finding includes file and line, plus what to merge, map, or delete — ready for a person or an agent.</p>
             </article>
-            <article>
-              <p class="stat-value">100<span class="accent-lavender">%</span></p>
-              <p>of drift traced to a source file/line</p>
+            <article class="card">
+              <p class="step-idx">Pro and above</p>
+              <p class="item-title">Track the score</p>
+              <p>Every scan is saved. See whether color, type, and components got better this week or piled up.</p>
+            </article>
+            <article class="card">
+              <p class="item-title">Four layers at once</p>
+              <p>Styles, components, copy, and animation — not a color-only lint, and not a screenshot diff.</p>
+            </article>
+            <article class="card">
+              <p class="step-idx">Pro and above</p>
+              <p class="item-title">Sync the libraries</p>
+              <p>Connect the sources you have. If you never had a system, Gruum can reverse-engineer a starter from the code.</p>
+            </article>
+            <article class="card">
+              <p class="item-title">Keep agents on-system</p>
+              <p>The prompt follows what already exists. Agents stop inventing values the <code>CLAUDE.md</code> never covered.</p>
             </article>
           </div>
+        </div>
+      </section>
 
-          <figure class="window product-frame product-frame-lg">
+      <section class="band" id="proof">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>From scattered hex to one source of truth</h2>
+            <p class="section-lede">A real color scan. Near-duplicates get traced back to tokens — or merged into new ones the rest of the org can check against.</p>
+          </header>
+          <ul class="stats">
+            <li>
+              <p class="stat-value">+12</p>
+              <p>color tokens flagged for merge</p>
+            </li>
+            <li>
+              <p class="stat-value">4 hrs</p>
+              <p>saved vs. a manual audit</p>
+            </li>
+            <li>
+              <p class="stat-value">100%</p>
+              <p>of drift traced to a file and line</p>
+            </li>
+          </ul>
+          <div class="ba-stack">
+            <figure>
+              <div class="media-stage">
+                <img
+                  src="assets/before.png"
+                  srcset="assets/before.png 803w, assets/before@2x.png 1606w"
+                  sizes="(max-width: 1080px) 100vw, 520px"
+                  alt="Nine near-duplicate orange values scattered before a Gruum scan"
+                  width="803"
+                  height="840"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <span class="step-idx">Before</span>
+                <p>9 color drifts, no shared token</p>
+              </figcaption>
+            </figure>
+            <figure>
+              <div class="media-stage">
+                <img
+                  src="assets/after.png"
+                  srcset="assets/after.png 803w, assets/after@2x.png 1606w"
+                  sizes="(max-width: 1080px) 100vw, 520px"
+                  alt="Six orange values merged into orange-100, orange-200, and orange-300 tokens"
+                  width="803"
+                  height="840"
+                  loading="lazy"
+                />
+              </div>
+              <figcaption>
+                <span class="step-idx">After</span>
+                <p>6 values merged into <code>orange-100</code>, <code>orange-200</code>, and <code>orange-300</code></p>
+              </figcaption>
+            </figure>
+          </div>
+          <div class="cta-links">
+            <a class="btn btn--secondary" href="sample.html">Read the full sample report</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band spotlight" id="spotlight">
+        <div class="wrap wrap--narrow spotlight-copy">
+          <h2>Not just a report. A prompt your agent can run.</h2>
+          <p class="section-lede">
+            Every scan exports a ready-to-use prompt. Hand it to a developer, or feed it to the agent that skipped the <code>CLAUDE.md</code>.
+          </p>
+        </div>
+        <div class="wrap">
+          <figure class="media-stage">
             <img
-              src="assets/product-example.png"
-              srcset="assets/product-example.png 1024w, assets/product-example@2x.png 2048w"
-              sizes="(max-width: 1280px) calc(100vw - 40px), 1280px"
-              alt="Full Gruum color report with score 83, hardcoded values, file locations, and a prompt to fix"
-              width="1024"
-              height="721"
+              src="assets/feature-report.png"
+              srcset="assets/feature-report.png 750w, assets/feature-report@2x.png 1500w"
+              sizes="(max-width: 1080px) 100vw, 1080px"
+              alt="Color report mapping a hardcoded hex to a token, with a copyable prompt to fix"
+              width="750"
+              height="750"
               loading="lazy"
             />
           </figure>
         </div>
       </section>
 
-      <section class="section spotlight" id="export">
-        <div class="blobs" aria-hidden="true">
-          <span class="blob blob-a"></span>
-          <span class="blob blob-b"></span>
-          <span class="blob blob-c"></span>
-        </div>
-        <div class="container spotlight-inner">
-          <p class="eyebrow">◇ Feedback loop</p>
-          <h2>Not just a report. A prompt your agent can run.</h2>
-          <p class="lede">
-            Every scan exports a ready-to-use prompt. Hand it to your developer, or feed it straight to your coding agent, and the drift gets corrected — tokens merged, duplicates removed, components consolidated.
-          </p>
-          <div class="hero-actions spotlight-actions">
-            <a class="btn btn-primary" href="https://app.getgruum.com">Get started</a>
-            <a class="btn btn-ghost" href="sample-prompt.md" download>View a sample prompt</a>
+      <section class="band" id="pricing">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>Pricing</h2>
+            <p class="section-lede">Start free. Pay when the scans are worth keeping.</p>
+          </header>
+          <div class="billing-toggle" data-billing data-cycle="yearly">
+            <p class="visually-hidden" id="billing-label">Billing period</p>
+            <div class="billing-toggle-group" role="group" aria-labelledby="billing-label">
+              <button type="button" data-cycle="monthly" aria-pressed="false">Monthly</button>
+              <button type="button" class="is-active" data-cycle="yearly" aria-pressed="true">Yearly</button>
+            </div>
+          </div>
+          <div class="price-grid">
+            <article class="price-card">
+              <p class="step-idx">Free</p>
+              <div class="price-block">
+                <p class="price"><span>$0</span></p>
+              </div>
+              <p class="price-desc">Enough to see if your system has drift worth fixing.</p>
+              <ul>
+                <li>1 project, up to 2 users</li>
+                <li>Connect 1 source (Figma or GitHub)</li>
+                <li>5 deep-pass audits/month, unlimited free-pass scans</li>
+                <li>All four consistency layers on every audit</li>
+                <li>1 saved report per project — saving again overwrites it</li>
+              </ul>
+              <a class="btn btn--secondary" href="https://app.getgruum.com">Get started</a>
+            </article>
+            <article class="price-card is-popular">
+              <p class="step-idx">Pro <span class="price-badge">Most popular</span></p>
+              <div class="price-block">
+                <p class="price">
+                  <span data-price-monthly="15" data-price-yearly="12">$12</span>
+                  <span class="price-period">/ user / mo</span>
+                </p>
+                <p class="price-note" data-yearly-note>billed yearly</p>
+              </div>
+              <p class="price-desc">For an individual or small team ready to keep more than one project clean.</p>
+              <p class="price-includes">All Free features, plus:</p>
+              <ul>
+                <li>Up to 5 projects</li>
+                <li>Connect up to 3 sources (Figma, GitHub, Canva or copy docs)</li>
+                <li>50 deep-pass audits/month per project</li>
+                <li>Full report history &amp; snapshot comparison over time</li>
+                <li>Generate library from code</li>
+              </ul>
+              <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
+            </article>
+            <article class="price-card">
+              <p class="step-idx">Business</p>
+              <div class="price-block">
+                <p class="price">
+                  <span data-price-monthly="24" data-price-yearly="20">$20</span>
+                  <span class="price-period">/ user / mo</span>
+                </p>
+                <p class="price-note" data-yearly-note>billed yearly</p>
+              </div>
+              <p class="price-desc">For teams who need everyone — design, dev, and the AI agents building alongside them — looking at the same source of truth.</p>
+              <p class="price-includes">All Pro features, plus:</p>
+              <ul>
+                <li>Unlimited projects, sources, and deep-pass audits</li>
+                <li>Bi-directional sync suggestions</li>
+                <li>Scheduled / CI-integrated drift tests</li>
+                <li>Slack/Teams alerts + weekly digest</li>
+                <li>AI-agent readiness check</li>
+                <li>Admin roles &amp; private projects</li>
+                <li>Priority support</li>
+              </ul>
+              <div class="price-actions">
+                <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
+                <a class="btn btn--secondary" href="mailto:privacy@getgruum.com?subject=Gruum%20Business">Contact sales</a>
+              </div>
+            </article>
+            <article class="price-card">
+              <p class="step-idx">Enterprise</p>
+              <div class="price-block">
+                <p class="price"><span>Custom</span></p>
+                <p class="price-note">Annual billing only</p>
+              </div>
+              <p class="price-desc">For orgs where design system drift is a compliance and procurement question, not just a workflow one.</p>
+              <p class="price-includes">All Business features, plus:</p>
+              <ul>
+                <li>SSO / SAML and SCIM</li>
+                <li>Invoice/PO billing</li>
+                <li>Migration &amp; onboarding support</li>
+                <li>Dedicated account management</li>
+                <li>Custom data retention &amp; audit log</li>
+                <li>Granular admin controls</li>
+                <li>Priority support with an SLA</li>
+              </ul>
+              <a class="btn btn--secondary" href="mailto:privacy@getgruum.com?subject=Gruum%20Enterprise">Contact sales</a>
+            </article>
           </div>
         </div>
       </section>
 
-      <section class="section cta-band" id="connect">
-        <div class="cta-frame">
-          <div class="blobs blobs-dense" aria-hidden="true">
-            <span class="blob blob-d"></span>
-            <span class="blob blob-e"></span>
-            <span class="blob blob-f"></span>
-            <span class="blob blob-g"></span>
+      <section class="band" id="faq">
+        <div class="wrap">
+          <header class="band-head">
+            <h2>Questions, answered.</h2>
+          </header>
+          <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>
+              <span>What does Gruum connect to?</span>
+              <svg class="faq-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.2 5.8 8 10.6l4.8-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <p>
+              Start with your GitHub repo or your live site — that’s enough for Gruum to scan what’s actually shipped. From there it checks against your other sources of truth: Figma, Canva, style docs, or an agent rules file, so drift gets caught no matter where it started.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Does Gruum fix the inconsistencies automatically, or just find them?</span>
+              <svg class="faq-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.2 5.8 8 10.6l4.8-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <p>
+              It finds them and gives you a ready-to-run prompt — merge these tokens, delete this duplicate, rename this component. You, or your coding agent, run the fix. Gruum doesn’t silently rewrite your code or your design files.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>Is my code or design data safe with Gruum?</span>
+              <svg class="faq-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.2 5.8 8 10.6l4.8-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <p>
+              Gruum only reads what it needs to run a scan — the repos, sites, and files you connect. Reports stay in your account unless you share them. We don’t sell your data, and we don’t write back to your code or design files. Details are in the <a href="privacy.html">Privacy Policy</a>.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>How is this different from Storybook, Figma tokens, or a linter?</span>
+              <svg class="faq-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.2 5.8 8 10.6l4.8-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <p>
+              Those tools keep one system honest — your components, or your tokens. Gruum checks them against each other: your Figma file against your codebase against your live product, so it catches the drift that happens <em>between</em> systems, not just within one.
+            </p>
+          </details>
+          <details class="faq-item">
+            <summary>
+              <span>How long does a scan take, and how often should I run one?</span>
+              <svg class="faq-chevron" width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3.2 5.8 8 10.6l4.8-4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </summary>
+            <p>
+              A single scan takes minutes. Most teams start with one before a release, then move to a regular cadence — weekly, or on every PR — once they see how much drift creeps in between checks.
+            </p>
+          </details>
           </div>
-          <div class="cta-inner">
-            <h2>Stop guessing where your design system drifted.</h2>
-            <p>One scan shows you exactly what’s inconsistent, with a prompt ready to fix it — so the drift shrinks instead of piling up.</p>
-            <a class="btn btn-primary" href="https://app.getgruum.com">Get started</a>
+        </div>
+      </section>
+
+      <section class="band cta-band">
+        <div class="wrap wrap--narrow">
+          <h2>Stop guessing which file was canonical.</h2>
+          <p class="section-lede">One scan. A prompt ready to fix it. The drift shrinks instead of piling up.</p>
+          <div class="cta-links">
+            <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <a class="logo logo-on-ink" href="#top" aria-label="Gruum home">
-            <img class="logo-mark" src="assets/gruum-icon.png" alt="" width="28" height="28" />
-            <span>Gruum</span>
-          </a>
-          <p>The consistency layer for design systems.</p>
-        </div>
-        <div class="footer-cols">
-          <div>
-            <p class="eyebrow">Product</p>
-            <a href="#how">How it works</a>
-            <a href="#sample">Sample report</a>
-          </div>
-          <div>
-            <p class="eyebrow">Company</p>
-            <a href="#top">About</a>
-            <a href="contact.html">Contact</a>
-          </div>
-          <div>
-            <p class="eyebrow">Legal</p>
-            <a href="privacy.html">Privacy</a>
-            <a href="terms.html">Terms</a>
-          </div>
-        </div>
-      </div>
-      <div class="container footer-base">
-        <p>© 2026 Gruum. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="script.js"></script>
+    <script src="script.js?v=5"></script>
   </body>
 </html>

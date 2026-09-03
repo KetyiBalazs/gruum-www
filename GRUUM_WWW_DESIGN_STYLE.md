@@ -89,6 +89,8 @@ TwelveLabs reference uses one clean geometric/rounded sans throughout (headline 
 
 ### 3.2 Type scale
 
+**Minimum size: 10px.** No text may render smaller than 10px — not labels, eyebrows, badges, captions, table headers, legal asides, or inline `code`. Relative sizes (`em` / `rem` / `%`) must clamp with `max(10px, …)` so they cannot dip below the floor if the root size or parent shrinks.
+
 | Style           | Size    | Weight  | Line-height | Tracking          | Example use                                            |
 | --------------- | ------- | ------- | ----------- | ----------------- | ------------------------------------------------------ |
 | Display / H1    | 56–72px | 400–500 | 1.05        | -0.01em           | Hero headline ("Built for the most demanding...")      |
@@ -195,6 +197,7 @@ This is the one part of the system that should feel distinct and ownable. Rules 
   --font-headline: "Inter", -apple-system, sans-serif;
   --font-body: "Inter", -apple-system, sans-serif;
   --font-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+  --text-min: 10px; /* never render type smaller than this */
 
   /* Spacing */
   --space-1: 4px;  --space-2: 8px;  --space-3: 16px; --space-4: 24px;
