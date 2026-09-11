@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 
 const prettyPaths = {
   "/coming-soon": "/coming-soon.html",
+  "/coming-soon-1": "/coming-soon-1.html",
   "/coming-soon-2": "/coming-soon-2.html",
 };
 

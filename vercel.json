@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    { "source": "/home", "destination": "/coming-soon", "permanent": false },
+    { "source": "/home/", "destination": "/coming-soon", "permanent": false }
+  ],
+  "rewrites": [
+    { "source": "/coming-soon", "destination": "/coming-soon.html" },
+    { "source": "/coming-soon/", "destination": "/coming-soon.html" },
+    { "source": "/coming-soon-1", "destination": "/coming-soon-1.html" },
+    { "source": "/coming-soon-1/", "destination": "/coming-soon-1.html" },
+    { "source": "/coming-soon-2", "destination": "/coming-soon-2.html" },
+    { "source": "/coming-soon-2/", "destination": "/coming-soon-2.html" }
+  ]
+}

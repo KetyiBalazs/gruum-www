@@ -1,6 +1,7 @@
 User-agent: *
 Allow: /
 Allow: /coming-soon
+Allow: /coming-soon-1
 Allow: /coming-soon-2
 Disallow: /home.html
 Disallow: /manifesto.html
