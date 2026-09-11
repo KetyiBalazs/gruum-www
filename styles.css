@@ -1554,3 +1554,242 @@ button:focus-visible {
   border: 0;
   background: var(--paper);
 }
+
+/* Coming soon — Gruum-Poster */
+
+@font-face {
+  font-family: "PP Monument Extended";
+  src: url("assets/fonts/PPMonumentExtended-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+.coming-soon-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background-color: #1b110f;
+  background-image: url("assets/coming-soon-glow.svg");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: top center;
+  background-blend-mode: normal;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.coming-soon-body .skip-link {
+  background: #eb2e03;
+  color: #fff;
+}
+
+.coming-soon {
+  box-sizing: border-box;
+  min-height: 100svh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(24px, env(safe-area-inset-top)) 24px max(80px, env(safe-area-inset-bottom));
+  position: relative;
+}
+
+.coming-soon-stack {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 56px;
+}
+
+.coming-soon-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+.coming-soon-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.coming-soon-mark {
+  display: block;
+  width: 39.432px;
+  height: 39.435px;
+  max-width: none;
+  flex-shrink: 0;
+}
+
+.coming-soon-wordmark {
+  font-size: 33.458px;
+  line-height: 1;
+  color: #fff;
+  font-weight: 400;
+}
+
+.coming-soon-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  text-align: center;
+}
+
+.coming-soon-copy h1 {
+  font-family: "PP Monument Extended", Inter, system-ui, sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: 0;
+  color: #fff;
+}
+
+.coming-soon-copy p {
+  margin: 0;
+  font-size: 20px;
+  line-height: 36px;
+  color: #9c8c89;
+}
+
+.coming-soon-contact {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  margin: 0;
+  font-size: 20px;
+  line-height: 36px;
+  color: #9c8c89;
+  text-align: center;
+}
+
+.coming-soon-contact a:hover {
+  color: #eed8d3;
+}
+
+.coming-soon-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.coming-soon-form input[type="email"] {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 12px;
+  background: #eed8d3;
+  color: #1b110f;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 400;
+  text-align: left;
+}
+
+.coming-soon-form input[type="email"]::placeholder {
+  color: #817977;
+}
+
+.coming-soon-form input[type="email"]:focus {
+  outline: 2px solid #eb2e03;
+  outline-offset: 3px;
+}
+
+.coming-soon-form button {
+  box-sizing: border-box;
+  width: 100%;
+  height: 60px;
+  padding: 12px 28px;
+  border: 0;
+  border-radius: 12px;
+  background: #eb2e03;
+  color: #fff;
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 400;
+  text-align: center;
+  box-shadow:
+    0 0 10px rgba(235, 46, 3, 0.3),
+    inset 0 3px 2px rgba(255, 255, 255, 0.35);
+}
+
+.coming-soon-form button:hover {
+  background: #d42903;
+}
+
+.coming-soon-form button:focus-visible {
+  outline: 2px solid #eed8d3;
+  outline-offset: 3px;
+}
+
+.coming-soon-thanks {
+  display: none;
+  margin: 0;
+  font-size: 18px;
+  line-height: 36px;
+  color: #eed8d3;
+  text-align: center;
+}
+
+.coming-soon-form.is-done input,
+.coming-soon-form.is-done button {
+  display: none;
+}
+
+.coming-soon-form.is-done .coming-soon-thanks {
+  display: block;
+}
+
+.coming-soon-error {
+  display: none;
+  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  color: #eed8d3;
+  text-align: center;
+}
+
+.coming-soon-form.is-error .coming-soon-error {
+  display: block;
+}
+
+@media (max-width: 800px) {
+  .coming-soon-body {
+    background-size: cover;
+  }
+}
+
+@media (max-width: 520px) {
+  .coming-soon-stack {
+    gap: 40px;
+  }
+
+  .coming-soon-hero {
+    gap: 32px;
+  }
+
+  .coming-soon-copy h1 {
+    font-size: 26px;
+    line-height: 1.35;
+  }
+
+  .coming-soon-copy p,
+  .coming-soon-contact {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

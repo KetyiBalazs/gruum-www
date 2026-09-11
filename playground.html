@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
     <meta name="description" content="Gruum theme playground — preview the marketing site in light and dark." />
     <meta name="theme-color" content="#131210" />
     <title>Playground — Gruum</title>
@@ -22,19 +23,19 @@
         <button type="button" data-theme-btn="light">Light</button>
         <button type="button" class="is-active" data-theme-btn="dark">Dark</button>
       </div>
-      <a href="index.html">Open live site</a>
+      <a href="home.html">Open live site</a>
     </header>
     <iframe
       class="playground-frame"
       id="preview"
-      src="index.html?theme=dark"
+      src="home.html?theme=dark"
       title="Gruum homepage preview"
     ></iframe>
     <script>
       const frame = document.getElementById("preview");
       const buttons = [...document.querySelectorAll("[data-theme-btn]")];
       const setTheme = (theme) => {
-        frame.src = "index.html?theme=" + theme;
+        frame.src = "home.html?theme=" + theme;
         buttons.forEach((btn) => {
           btn.classList.toggle("is-active", btn.dataset.themeBtn === theme);
         });

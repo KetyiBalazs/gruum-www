@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Allow: /coming-soon
+Allow: /coming-soon-2
+Disallow: /home.html
+Disallow: /manifesto.html
+Disallow: /sample.html
+Disallow: /privacy.html
+Disallow: /terms.html
+Disallow: /contact.html
+Disallow: /design-system.html
+Disallow: /playground.html
+Disallow: /playground
