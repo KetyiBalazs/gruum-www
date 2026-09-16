@@ -32,6 +32,13 @@
       .then(function (response) {
         if (response.ok || response.status === 409) {
           form.classList.add("is-done");
+          try {
+            if (window.posthog && typeof window.posthog.capture === "function") {
+              window.posthog.capture("waitlist_signup", { source: source });
+            }
+          } catch (_) {
+            /* analytics must never block signup UX */
+          }
           return;
         }
         throw new Error("Waitlist request failed");

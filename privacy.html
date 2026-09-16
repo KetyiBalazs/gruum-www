@@ -25,6 +25,7 @@
       })();
     </script>
     <link rel="stylesheet" href="styles.css?v=7" />
+    <script src="posthog.js"></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -115,10 +116,13 @@
           <li>Log data such as IP address, browser type, device information, and pages or features used</li>
           <li>Cookies and similar technologies needed for sessions, security, and product analytics</li>
           <li>
-            Session recordings of product use (clicks, navigation, and a masked view of the interface)
-            via PostHog, so we can understand friction and fix bugs. Inputs and on-screen text are
-            masked before they leave your browser; we do not use recordings for advertising. Recordings
-            are retained for a limited period and then deleted. Contact us if you would like to be excluded from this.
+            Product analytics and (on the signed-in product) session recordings via PostHog — page
+            views, clicks, and navigation so we can understand usage and fix bugs. On the public
+            marketing site we collect anonymous page analytics only (no session recordings). In the
+            product app, inputs and on-screen text in recordings are masked before they leave your
+            browser; we do not use analytics or recordings for advertising. Recordings are retained
+            for a limited period and then deleted. Contact us if you would like to be excluded from
+            this.
           </li>
           <li>Diagnostic information related to errors, GitHub connection, report generation, and service reliability</li>
         </ul>
