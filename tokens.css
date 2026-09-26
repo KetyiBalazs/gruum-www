@@ -1,0 +1,206 @@
+/* Gruum design tokens — copied from Figma: Gruum-UI-Design
+   Use these custom properties and classes as the only source of
+   colors, numbers, type, and shadows. Figma names are noted in comments. */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap");
+
+/* PP Neue Montreal is licensed (Pangram Pangram). Add the files under
+   /fonts and uncomment the @font-face rules when they are available.
+@font-face {
+  font-family: "PP Neue Montreal";
+  src: url("/fonts/PPNeueMontreal-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+*/
+
+:root {
+  /* Fonts */
+  --font-headline: "PP Neue Montreal", Inter, sans-serif;
+  --font-body: Inter, sans-serif;
+  --font-token: "DM Mono", ui-monospace, monospace;
+
+  /* Colors — Figma color variables */
+  --background: #f5f6f7; /* background */
+  --white: #ffffff; /* white */
+  --dark: #dbe2e6; /* dark */
+  --primary-base: #1c8ef1; /* primary/base */
+  --primary-light: #edf4ff; /* primary/light */
+  --error-base: #eb2e03; /* error/base */
+  --error-light: #ffe4de; /* error/light */
+  --error-faded: #eb2e031a; /* error/faded — 10% of #eb2e03 */
+  --text-primary: #21303a; /* text/primary */
+  --text-secondary: #5e6970; /* text/secondary */
+  --text-tertiary: #9f9f9f; /* text/tertiary */
+  --text-light: #fbfcfc; /* text/light */
+  --fade-dark-10: #0000001a; /* fade/dark (10) */
+  --fade-dark-15: #00000026; /* fade/dark (15) */
+  --fade-dark-20: #00000033; /* fade/dark (20) */
+  --fade-white-60: #ffffff99; /* fade/white (60) */
+  --green-base: #8bd13f; /* green/base */
+  --green-faded: #68d13f1a; /* green/faded — 10% of #68d13f */
+  --variant-base: #654dc4; /* variant/base */
+  --variant-faded: #654dc41a; /* variant/faded */
+  --semantic-button: #1c8ef1; /* semantic/button */
+
+  /* Numbers — Figma number variables (px) */
+  --xsmall: 2px; /* xsmall */
+  --number: 6px; /* Number */
+  --corner-small: 8px; /* corner/small */
+  --corner-medium: 10px; /* corner/medium */
+  --corner-full: 999px; /* corner/full */
+
+  /* Text styles — Figma text styles */
+  --headline-main-size: 32px;
+  --headline-main-line: 44px;
+  --headline-main-spacing: -1px;
+  --headline-main-weight: 500;
+
+  --headline-secondary-size: 26px;
+  --headline-secondary-line: 38px;
+  --headline-secondary-weight: 500;
+
+  --headline-small-size: 22px;
+  --headline-small-line: 32px;
+  --headline-small-weight: 500;
+
+  --body-large-size: 18px;
+  --body-large-line: 1.8;
+  --body-large-weight: 600;
+
+  --body-normal-size: 16px;
+  --body-normal-line: 26px;
+  --body-normal-weight: 400;
+  --body-normal-bold-weight: 500;
+
+  --body-small-size: 14px;
+  --body-small-line: 16px;
+  --body-small-weight: 400;
+  --body-small-bold-weight: 500;
+
+  --body-xsmall-size: 12px;
+  --body-xsmall-line: 12px;
+  --body-xsmall-weight: 500;
+
+  --token-size: 14px;
+  --token-line: 22px;
+  --token-regular-weight: 400;
+  --token-bold-weight: 500;
+
+  /* Effect styles — Figma effect styles, as CSS box-shadow */
+  --shadow-card-hard: 0 2px 8px 0 #00000033; /* Card/Hard Shadow */
+  --shadow-card-soft: 0 0 2px 0 #0000001a, 0 2px 8px 0 #0000000d; /* Card/Soft Shadow */
+  --shadow-button-primary:
+    inset 0 0 10px 0 #ffffff66, 0 0 2px 0 #00000066, 0 2px 8px 0 #0000001a; /* Button/Primary Shadow */
+  --shadow-button-white:
+    inset 0 0 10px 0 #1c8ef126, 0 0 2px 0 #00000066, 0 2px 8px 0 #0000001a; /* Button/White Inner Shadow */
+  --shadow-button-secondary: inset 0 0 4px 0 #ffffff80; /* Button/Secondary Shadow */
+  --shadow-modal-base: 0 0 100px 0 #0000001a, 0 2px 10px 0 #00000026; /* Modal/Base Shadow */
+}
+
+/* Text styles */
+.headline-main {
+  font-family: var(--font-headline);
+  font-size: var(--headline-main-size);
+  font-weight: var(--headline-main-weight);
+  line-height: var(--headline-main-line);
+  letter-spacing: var(--headline-main-spacing);
+}
+
+.headline-secondary {
+  font-family: var(--font-headline);
+  font-size: var(--headline-secondary-size);
+  font-weight: var(--headline-secondary-weight);
+  line-height: var(--headline-secondary-line);
+}
+
+.headline-small {
+  font-family: var(--font-headline);
+  font-size: var(--headline-small-size);
+  font-weight: var(--headline-small-weight);
+  line-height: var(--headline-small-line);
+}
+
+.body-large-bold {
+  font-family: var(--font-body);
+  font-size: var(--body-large-size);
+  font-weight: var(--body-large-weight);
+  line-height: var(--body-large-line);
+}
+
+.body-normal {
+  font-family: var(--font-body);
+  font-size: var(--body-normal-size);
+  font-weight: var(--body-normal-weight);
+  line-height: var(--body-normal-line);
+}
+
+.body-normal-bold {
+  /* Figma name: Body/Normail (Bold) */
+  font-family: var(--font-body);
+  font-size: var(--body-normal-size);
+  font-weight: var(--body-normal-bold-weight);
+  line-height: var(--body-normal-line);
+}
+
+.body-small {
+  font-family: var(--font-body);
+  font-size: var(--body-small-size);
+  font-weight: var(--body-small-weight);
+  line-height: var(--body-small-line);
+}
+
+.body-small-bold {
+  font-family: var(--font-body);
+  font-size: var(--body-small-size);
+  font-weight: var(--body-small-bold-weight);
+  line-height: var(--body-small-line);
+}
+
+.body-xsmall {
+  /* Figma: Body/X Small (Regular) — Medium weight */
+  font-family: var(--font-body);
+  font-size: var(--body-xsmall-size);
+  font-weight: var(--body-xsmall-weight);
+  line-height: var(--body-xsmall-line);
+}
+
+.token-regular {
+  font-family: var(--font-token);
+  font-size: var(--token-size);
+  font-weight: var(--token-regular-weight);
+  line-height: var(--token-line);
+}
+
+.token-bold {
+  font-family: var(--font-token);
+  font-size: var(--token-size);
+  font-weight: var(--token-bold-weight);
+  line-height: var(--token-line);
+}
+
+/* Effect styles */
+.shadow-card-hard {
+  box-shadow: var(--shadow-card-hard);
+}
+
+.shadow-card-soft {
+  box-shadow: var(--shadow-card-soft);
+}
+
+.shadow-button-primary {
+  box-shadow: var(--shadow-button-primary);
+}
+
+.shadow-button-white {
+  box-shadow: var(--shadow-button-white);
+}
+
+.shadow-button-secondary {
+  box-shadow: var(--shadow-button-secondary);
+}
+
+.shadow-modal-base {
+  box-shadow: var(--shadow-modal-base);
+}

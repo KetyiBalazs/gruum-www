@@ -7,24 +7,12 @@
       name="description"
       content="The Design Consistency Layer for Agents and Teams. Join the Gruum waitlist."
     />
-    <meta name="theme-color" content="#1B110F" />
+    <meta name="theme-color" content="#f5f6f7" />
     <title>Coming soon — Gruum</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wdth,wght@0,14..32,75..125,400;0,14..32,75..125,500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="preload"
-      href="assets/fonts/PPMonumentExtended-Regular.otf"
-      as="font"
-      type="font/otf"
-      crossorigin
-    />
-    <link rel="stylesheet" href="styles.css?v=19" />
-    <script src="posthog.js"></script>
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/posthog.js"></script>
   </head>
   <body class="coming-soon-body">
     <a class="skip-link" href="#main">Skip to content</a>
@@ -35,26 +23,43 @@
           <div class="coming-soon-lockup">
             <img
               class="coming-soon-mark"
-              src="assets/gruum-mark-poster.svg"
+              src="/assets/gruum-mark.svg"
               alt=""
-              width="39.432"
-              height="39.435"
+              width="32"
+              height="32"
             />
-            <span class="coming-soon-wordmark">Gruum</span>
+            <img
+              class="coming-soon-wordmark"
+              src="/assets/gruum-wordmark.svg"
+              alt="Gruum"
+              width="83.7616"
+              height="19.7101"
+            />
           </div>
 
           <div class="coming-soon-copy">
-            <h1>The Design Consistency Layer for Agents and Teams</h1>
-            <p>
-              Gruum keeps your design system in sync across Figma, code, and AI tools.
-              So everyone building for your brand uses the same visual language.
+            <h1 class="headline-main">
+              The Design Consistency Layer for Agents and Teams
+            </h1>
+            <p class="body-normal">
+              Gruum keeps your design system in sync across Figma, code, and AI
+              tools. So everyone building for your brand uses the same visual
+              language.
             </p>
           </div>
         </div>
 
-        <form class="coming-soon-form" data-source="index" action="#" method="post">
-          <label class="visually-hidden" for="waitlist-email">E-mail address</label>
+        <form
+          class="coming-soon-form"
+          data-source="index"
+          action="#"
+          method="post"
+        >
+          <label class="visually-hidden" for="waitlist-email"
+            >E-mail address</label
+          >
           <input
+            class="body-small"
             id="waitlist-email"
             name="email"
             type="email"
@@ -62,17 +67,19 @@
             required
             placeholder="E-mail address"
           />
-          <button type="submit">Join the waitlist</button>
-          <p class="coming-soon-thanks">You’re on the list.</p>
-          <p class="coming-soon-error">Couldn’t join the waitlist. Try again.</p>
+          <button class="body-small" type="submit">Join the waitlist</button>
+          <p class="coming-soon-thanks body-normal">You’re on the list.</p>
+          <p class="coming-soon-error body-small">
+            Couldn’t join the waitlist. Try again.
+          </p>
         </form>
       </div>
 
-      <p class="coming-soon-contact">
+      <p class="coming-soon-contact body-small">
         Contact: <a href="mailto:hello@ketyi.me">hello@ketyi.me</a>
       </p>
     </main>
 
-    <script src="waitlist.js"></script>
+    <script src="/waitlist.js"></script>
   </body>
 </html>

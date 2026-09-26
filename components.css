@@ -1,0 +1,372 @@
+/* Gruum UI components — mapped 1:1 to Figma Components in Gruum-UI-Design. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -40px;
+  z-index: 100;
+  padding: var(--number) 16px;
+  background: var(--semantic-button);
+  color: var(--white);
+  border-radius: var(--corner-medium);
+}
+
+.skip-link:focus {
+  top: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 32px;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: var(--corner-medium);
+  font-family: var(--font-body);
+  font-size: var(--body-small-size);
+  font-weight: var(--body-small-weight);
+  line-height: var(--body-small-line);
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.btn img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  position: relative;
+  gap: 10px;
+  background: var(--semantic-button);
+  color: var(--white);
+  box-shadow: var(--shadow-button-primary);
+}
+
+.btn-secondary {
+  gap: 10px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--fade-dark-20);
+  box-shadow: var(--shadow-button-secondary);
+}
+
+.btn-white {
+  position: relative;
+  gap: 10px;
+  background: var(--white);
+  color: var(--primary-base);
+  box-shadow: var(--shadow-button-white);
+}
+
+.btn-tertiary {
+  height: 26px;
+  padding: 0;
+  gap: var(--corner-small);
+  background: transparent;
+  color: var(--primary-base);
+  font-size: var(--body-normal-size);
+  font-weight: var(--body-normal-bold-weight);
+  line-height: var(--body-normal-line);
+  box-shadow: none;
+}
+
+.btn-block {
+  width: 100%;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border: 1px solid var(--fade-dark-10);
+  border-radius: var(--corner-small);
+  background: var(--white);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-card-hard);
+  white-space: nowrap;
+}
+
+.chip-rules {
+  padding: 4px 8px 4px var(--number);
+}
+
+.chip img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: var(--number);
+  border: 3px solid var(--white);
+  border-radius: var(--number);
+  box-shadow: var(--shadow-card-soft);
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.marker img {
+  display: block;
+}
+
+.marker-error {
+  background: var(--error-light);
+}
+
+.marker-primary {
+  background: var(--primary-light);
+}
+
+.marker-soon {
+  background: var(--dark);
+}
+
+.media-frame {
+  background: var(--white);
+  border-radius: var(--corner-medium);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.media-frame-lg {
+  width: 100%;
+  height: 320px;
+}
+
+.media-frame-sm {
+  width: 100%;
+  height: 160px;
+}
+
+.feature-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feature-copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--corner-small);
+}
+
+.ds-badge {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px;
+  background: var(--white);
+  border: 1px dashed var(--fade-dark-10);
+  border-radius: var(--corner-small);
+}
+
+.ds-badge-name,
+.ds-badge-version {
+  display: flex;
+  align-items: center;
+}
+
+.ds-badge-name {
+  gap: var(--corner-small);
+}
+
+.ds-badge-version {
+  gap: var(--number);
+}
+
+.ds-badge-ver {
+  color: var(--text-tertiary);
+}
+
+.ds-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: var(--corner-full);
+  background: var(--green-base);
+  flex-shrink: 0;
+}
+
+.source-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 40px;
+  padding: var(--number) 12px var(--number) 7px;
+  background: var(--white);
+  border: 3px solid var(--white);
+  border-radius: var(--corner-full);
+  box-shadow: var(--shadow-card-soft);
+  box-sizing: border-box;
+}
+
+.source-chip img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.source-chip p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.source-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--corner-full);
+  background: var(--green-base);
+  flex-shrink: 0;
+}
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 4px 8px;
+  background: var(--white);
+  border: 1px solid var(--fade-dark-10);
+  border-radius: var(--corner-small);
+  box-shadow: var(--shadow-card-hard);
+}
+
+.status-tag p {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.type-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 4px 8px;
+  border-radius: var(--corner-small);
+  box-sizing: border-box;
+}
+
+.type-primitive {
+  background: color-mix(in srgb, var(--primary-base) 10%, transparent);
+  color: var(--primary-base);
+}
+
+.type-semantic {
+  background: var(--variant-faded);
+  color: var(--variant-base);
+}
+
+.token-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--number);
+  padding: var(--corner-small) 10px var(--corner-small) 7px;
+  border: 1px solid var(--fade-dark-10);
+  border-radius: var(--corner-small);
+  background: var(--white);
+}
+
+.token-chip span {
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.swatch {
+  width: 13px;
+  height: 13px;
+  border: 1px solid var(--fade-dark-10);
+  border-radius: var(--xsmall);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--corner-medium);
+  box-shadow: var(--shadow-card-soft);
+}
+
+.card-pad {
+  padding: 32px;
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--corner-small);
+  width: 100%;
+}
+
+.faq-item summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.marker-dots {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--number);
+  height: 6px;
+}
+
+.marker-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--corner-full);
+  flex-shrink: 0;
+}
+
+.marker-dot-muted {
+  background: var(--dark);
+}
+
+.marker-dot-active {
+  background: var(--primary-base);
+}

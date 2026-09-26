@@ -3,173 +3,1820 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow" />
-    <meta name="description" content="Gruum marketing design system — color, type, and components used on getgruum.com." />
-    <meta name="theme-color" content="#F5F5F2" />
-    <title>Design system — Gruum</title>
-    <link rel="icon" href="assets/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;1,14..32,400&display=swap"
-      rel="stylesheet"
+    <meta
+      name="description"
+      content="Public Design System of the Gruum websites."
     />
-    <script>
-      (function () {
-        var theme = new URLSearchParams(location.search).get("theme");
-        if (theme === "dark") {
-          document.documentElement.setAttribute("data-theme", "dark");
-          var meta = document.querySelector('meta[name="theme-color"]');
-          if (meta) meta.setAttribute("content", "#131210");
-        }
-      })();
-    </script>
-    <link rel="stylesheet" href="styles.css?v=8" />
-    <script src="posthog.js"></script>
+    <meta name="theme-color" content="#f5f6f7" />
+    <title>Design System — Gruum</title>
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="/tokens.css" />
+    <link rel="stylesheet" href="/components.css" />
+    <link rel="stylesheet" href="/design-system.css" />
+    <script src="/posthog.js"></script>
   </head>
-  <body>
+  <body class="ds-body">
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="mobile-bar">
-      <a class="logo" href="home.html"" aria-label="Gruum home">
-        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
-      </a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-sidebar">
-        <span class="nav-toggle-bars" aria-hidden="true"></span>
-        <span class="visually-hidden">Menu</span>
-      </button>
-    </header>
+    <div class="ds-shell">
+      <aside class="ds-sidebar">
+        <div class="ds-sidebar-top">
+          <a class="logo" href="/home">
+            <img
+              src="/assets/gruum-mark.svg"
+              alt=""
+              width="32"
+              height="32"
+            />
+            <img
+              src="/assets/gruum-wordmark.svg"
+              alt="Gruum"
+              width="83.7616"
+              height="19.7101"
+            />
+          </a>
 
-    <aside id="site-sidebar" class="site-sidebar">
-      <a class="logo" href="home.html"" aria-label="Gruum home">
-        <img class="logo-full" src="assets/gruum-logo.png" alt="Gruum" width="98" height="26" />
-      </a>
-      <nav class="side-nav" aria-label="Primary">
-        <a href="home.html"#top">Overview</a>
-        <a href="home.html"#how">How it works</a>
-        <a href="home.html"#features">Features</a>
-        <a href="manifesto.html">Manifesto</a>
-        <a href="home.html"#pricing">Pricing</a>
-        <a href="home.html"#faq">FAQ</a>
-      </nav>
-      <div class="side-cta">
-        <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
-        <a href="sample.html">Sample report</a>
-      </div>
-      <div class="side-foot">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
-        <a href="design-system.html" aria-current="page">Design system</a>
-        <p>© 2026 Gruum</p>
-      </div>
-    </aside>
+          <nav class="ds-nav" aria-label="Design system">
+            <div class="ds-nav-group">
+              <div class="ds-nav-parent">
+                <span class="ds-nav-parent-label body-normal-bold">
+                  <img
+                    src="/assets/icons/icon-nav-style.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                  Foundation
+                </span>
+                <img
+                  src="/assets/icons/icon-chevron-up.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+              </div>
+              <a class="ds-nav-child body-normal-bold" href="#logo">Logo</a>
+              <a class="ds-nav-child body-normal-bold" href="#colors">Colors</a>
+              <a class="ds-nav-child body-normal-bold" href="#typography"
+                >Typography</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#effects"
+                >Effects</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#icons">Icons</a>
+              <a class="ds-nav-child body-normal-bold" href="#sounds">Sounds</a>
+              <a class="ds-nav-child body-normal-bold" href="#animation"
+                >Animation</a
+              >
+            </div>
 
-    <main id="main" class="page-col">
-      <article class="wrap ds">
-        <p class="eyebrow">Reference</p>
-        <h1>Design system</h1>
-        <p class="legal-updated">Live tokens from getgruum.com</p>
-        <p>
-          The marketing site is a quiet paper page with one lime wash, hairline dashed rails, and a 160px left sidebar. Color is rationed. Type never goes below 10px.
-        </p>
-        <p class="ds-rule">Minimum type size: 10px. Labels, badges, captions, and <code>code</code> clamp to this floor.</p>
+            <div class="ds-nav-group">
+              <div class="ds-nav-parent">
+                <span class="ds-nav-parent-label body-normal-bold">
+                  <img
+                    src="/assets/icons/icon-nav-variant.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                  Component
+                </span>
+                <img
+                  src="/assets/icons/icon-chevron-up.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+              </div>
+              <a class="ds-nav-child body-normal-bold" href="#buttons"
+                >Buttons</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#chips">Chips</a>
+              <a class="ds-nav-child body-normal-bold" href="#markers"
+                >Markers</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#faq">FAQ</a>
+              <a class="ds-nav-child body-normal-bold" href="#logo">Logo</a>
+            </div>
 
-        <h2>Color</h2>
-        <p>Foundation tokens. 90% of the page is paper + ink + hairlines.</p>
-        <div class="swatch-grid">
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--paper)"></div>
-            <p>--paper · #F5F5F2</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--paper-pure)"></div>
-            <p>--paper-pure · #FBFBF8</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--surface-muted)"></div>
-            <p>--surface-muted · #E7E7E3</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--text-strong)"></div>
-            <p>--text-strong · #1D1313</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--text-secondary)"></div>
-            <p>--text-secondary · #493A3A</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--border-card)"></div>
-            <p>--border-card · #DEE2DE</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--accent)"></div>
-            <p>--accent · #EF4444</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--highlight)"></div>
-            <p>--highlight · #BBF451</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--link)"></div>
-            <p>--link · #A76451</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--link-mark)"></div>
-            <p>--link-mark · #FFF7B1</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--page-wash-beige)"></div>
-            <p>--page-wash-beige</p>
-          </div>
-          <div class="swatch">
-            <div class="swatch-chip" style="background: var(--page-wash-lime)"></div>
-            <p>--page-wash-lime</p>
+            <div class="ds-nav-group">
+              <div class="ds-nav-parent">
+                <span class="ds-nav-parent-label body-normal-bold">
+                  <img
+                    src="/assets/icons/icon-nav-pattern.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                  Patterns
+                </span>
+                <img
+                  src="/assets/icons/icon-chevron-up.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+              </div>
+              <a class="ds-nav-child body-normal-bold" href="#tag-section"
+                >Tag Section</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#text-box"
+                >Text Box</a
+              >
+              <a class="ds-nav-child body-normal-bold" href="#pricing"
+                >Pricing Card</a
+              >
+            </div>
+
+            <div class="ds-nav-parent">
+              <span class="ds-nav-parent-label body-normal-bold">
+                <img
+                  src="/assets/icons/icon-nav-guidelines.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+                Governance
+              </span>
+              <img
+                src="/assets/icons/icon-chevron-down.svg"
+                alt=""
+                width="20"
+                height="20"
+              />
+            </div>
+          </nav>
+
+          <div class="ds-nav-links">
+            <a class="btn btn-tertiary" href="/home">
+              What is Gruum?
+              <img
+                src="/assets/icons/icon-arrow.svg"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </a>
+            <a class="btn btn-tertiary" href="/">
+              Early Access
+              <img
+                src="/assets/icons/icon-arrow.svg"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </a>
           </div>
         </div>
 
-        <h2>Type</h2>
-        <p>Inter for UI and headlines. IBM Plex Mono for labels and code. Smallest size is 12px labels, floored at 10px.</p>
-        <div class="ds-type">
-          <p class="eyebrow">Eyebrow · tagline</p>
-          <h1>Display headline</h1>
-          <h2>Section headline</h2>
-          <p class="item-title">Card title</p>
-          <p class="lede">Lede. One or two lines of supporting copy under a headline.</p>
-          <p>Body copy at description size. Used for paragraphs, cards, and FAQ answers.</p>
-          <p class="step-idx">Step index · uppercase</p>
-          <p><code>code · token or file path</code></p>
+        <div class="ds-aside">
+          <div class="status-tag">
+            <span class="source-dot" aria-hidden="true"></span>
+            <p class="body-small">Active</p>
+          </div>
+          <p class="ds-refresh body-small">Refreshed 3 days ago</p>
         </div>
+      </aside>
 
-        <h2>Buttons</h2>
-        <div class="ds-row">
-          <a class="btn btn--primary" href="https://app.getgruum.com">Get started</a>
-          <a class="btn btn--secondary" href="sample.html">See a sample report</a>
-          <a class="btn btn--primary btn--sm" href="https://app.getgruum.com">Get started</a>
-        </div>
+      <main id="main" class="ds-main">
+        <section class="ds-hero" aria-labelledby="ds-title">
+          <div class="ds-hero-top">
+            <div class="ds-hero-copy">
+              <h1 id="ds-title" class="headline-main">Gruum Design System</h1>
+              <p class="body-normal">
+                Public Design System of the Gruum websites. By clicking on
+                download - you can download the whole design system.
+              </p>
+            </div>
+            <button class="btn btn-primary" type="button">
+              Download Guide
+              <img
+                src="/assets/icons/icon-lock.svg"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </button>
+          </div>
 
-        <h2>Components</h2>
-        <p class="step-idx">Unlimited · all plans</p>
-        <div class="card-grid" style="margin-top: 12px">
-          <article class="card">
-            <p class="item-title">Card</p>
-            <p>Paper-pure surface, 16px radius, hairline border. Title + body. No drop shadow.</p>
-          </article>
-        </div>
-        <ul class="source-row" aria-label="Pills">
-          <li>Figma</li>
-          <li>GitHub</li>
-          <li>Canva</li>
-        </ul>
-        <p class="step-idx" style="margin-top: 24px">Pro <span class="price-badge">Most popular</span></p>
+          <div class="ds-sources">
+            <p class="body-normal-bold">Synced sources:</p>
+            <div class="ds-source-row">
+              <div class="source-chip">
+                <img
+                  src="/assets/icons/icon-github.svg"
+                  alt=""
+                  width="20"
+                  height="20"
+                />
+                <p class="body-normal">gruum-main</p>
+                <span class="source-dot" aria-hidden="true"></span>
+              </div>
+              <div class="source-chip">
+                <img
+                  src="/assets/icons/icon-figma.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+                <p class="body-normal">Core DS Library</p>
+                <span class="source-dot" aria-hidden="true"></span>
+              </div>
+              <div class="source-chip">
+                <img
+                  src="/assets/icons/icon-link.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+                <p class="body-normal">getgruum.com</p>
+                <span class="source-dot" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        <h2>Layout</h2>
-        <p>
-          Desktop shell: fixed 160px sidebar, 32px gap, 640px content column with dashed rails. Mobile: 56px top bar and a full-screen menu. Section bands use dashed hairline dividers, not boxed containers.
-        </p>
-      </article>
-    </main>
+        <section class="ds-lock" aria-labelledby="lock-title">
+          <div class="ds-lock-row">
+            <div class="ds-lock-copy">
+              <span class="marker marker-error">
+                <img
+                  src="/assets/icons/icon-lock-error.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+              </span>
+              <h2 id="lock-title" class="headline-small">Full view is locked</h2>
+            </div>
+            <a class="btn btn-tertiary" href="/">
+              Log in
+              <img
+                src="/assets/icons/icon-arrow.svg"
+                alt=""
+                width="16"
+                height="16"
+              />
+            </a>
+          </div>
+          <p class="body-normal">
+            Define how colors and tokens should be used across your app.
+          </p>
+        </section>
 
-    <script src="script.js?v=5"></script>
+        <section class="ds-section" id="colors" aria-labelledby="colors-title">
+          <div class="ds-section-head">
+            <h2 id="colors-title" class="headline-small">Color tokens</h2>
+            <p class="body-normal">
+              Define how colors and tokens should be used across your app.<br />
+              As the app grows we repopulate the designs for your review.
+            </p>
+          </div>
+
+          <div class="ds-table-wrap">
+            <div class="ds-table" role="table" aria-label="Color tokens">
+              <div class="ds-table-row ds-table-head" role="row">
+                <div class="ds-cell body-small-bold" role="columnheader">
+                  Name
+                </div>
+                <div class="ds-cell body-small-bold" role="columnheader">
+                  Value
+                </div>
+                <div class="ds-cell body-small-bold" role="columnheader">
+                  Type
+                </div>
+                <div class="ds-cell body-small-bold" role="columnheader">
+                  <span class="source-dot" aria-hidden="true"></span>
+                  Github Library
+                </div>
+                <div class="ds-cell body-small-bold" role="columnheader">
+                  <span class="source-dot" aria-hidden="true"></span>
+                  Figma Library
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">white</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--white)"
+                    ></span>
+                    <span class="token-bold">#FFFFFF</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--white)"
+                    ></span>
+                    <span class="token-bold">--white</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--white)"
+                    ></span>
+                    <span class="token-bold">White</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">dark</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--dark)"
+                    ></span>
+                    <span class="token-bold">#DBE2E6</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--dark)"
+                    ></span>
+                    <span class="token-bold">--dark</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--dark)"
+                    ></span>
+                    <span class="token-bold">Dark</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">primary</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-base)"
+                    ></span>
+                    <span class="token-bold">#1C8EF1</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-base)"
+                    ></span>
+                    <span class="token-bold">--primary-base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-base)"
+                    ></span>
+                    <span class="token-bold">Primary/base</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-light)"
+                    ></span>
+                    <span class="token-bold">#EDF4FF</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-light)"
+                    ></span>
+                    <span class="token-bold">--primary-light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--primary-light)"
+                    ></span>
+                    <span class="token-bold">Primary/light</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">error</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-base)"
+                    ></span>
+                    <span class="token-bold">#EB2E03</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-base)"
+                    ></span>
+                    <span class="token-bold">--error-base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-base)"
+                    ></span>
+                    <span class="token-bold">Error/base</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-light)"
+                    ></span>
+                    <span class="token-bold">#FFE4DE</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-light)"
+                    ></span>
+                    <span class="token-bold">--error-light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-light)"
+                    ></span>
+                    <span class="token-bold">Error/light</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-faded)"
+                    ></span>
+                    <span class="token-bold">#EB2E03</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-faded)"
+                    ></span>
+                    <span class="token-bold">--error-faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--error-faded)"
+                    ></span>
+                    <span class="token-bold">Error/faded</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">text</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">primary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-primary)"
+                    ></span>
+                    <span class="token-bold">#21303A</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-primary)"
+                    ></span>
+                    <span class="token-bold">--text-primary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-primary)"
+                    ></span>
+                    <span class="token-bold">Text/primary</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">secondary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-secondary)"
+                    ></span>
+                    <span class="token-bold">#5E6970</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-secondary)"
+                    ></span>
+                    <span class="token-bold">--text-secondary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-secondary)"
+                    ></span>
+                    <span class="token-bold">Text/secondary</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">tertiary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-tertiary)"
+                    ></span>
+                    <span class="token-bold">#9F9F9F</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-tertiary)"
+                    ></span>
+                    <span class="token-bold">--text-tertiary</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-tertiary)"
+                    ></span>
+                    <span class="token-bold">Text/tertiary</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">light</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-light)"
+                    ></span>
+                    <span class="token-bold">#FBFCFC</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-light)"
+                    ></span>
+                    <span class="token-bold">--light</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--text-light)"
+                    ></span>
+                    <span class="token-bold">Light</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">fade</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">white (60)</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-white-60)"
+                    ></span>
+                    <span class="token-bold">#FFFFFF</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-white-60)"
+                    ></span>
+                    <span class="token-bold">--fade-white-60</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-white-60)"
+                    ></span>
+                    <span class="token-bold">Fade/white-60</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">dark (20)</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-20)"
+                    ></span>
+                    <span class="token-bold">#000000</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-20)"
+                    ></span>
+                    <span class="token-bold">--fade-dark-20</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-20)"
+                    ></span>
+                    <span class="token-bold">Fade/dark-20</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">dark (15)</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-15)"
+                    ></span>
+                    <span class="token-bold">#000000</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-15)"
+                    ></span>
+                    <span class="token-bold">--fade-dark-15</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-15)"
+                    ></span>
+                    <span class="token-bold">Fade/dark-15</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">dark (10)</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-10)"
+                    ></span>
+                    <span class="token-bold">#000000</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-10)"
+                    ></span>
+                    <span class="token-bold">--fade-dark-10</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--fade-dark-10)"
+                    ></span>
+                    <span class="token-bold">Fade/dark-10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">green</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-base)"
+                    ></span>
+                    <span class="token-bold">#8BD13F</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-base)"
+                    ></span>
+                    <span class="token-bold">--green-base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-base)"
+                    ></span>
+                    <span class="token-bold">Green/base</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-faded)"
+                    ></span>
+                    <span class="token-bold">#68D13F</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-faded)"
+                    ></span>
+                    <span class="token-bold">--green-faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--green-faded)"
+                    ></span>
+                    <span class="token-bold">Green/faded</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">variant</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-base)"
+                    ></span>
+                    <span class="token-bold">#654DC4</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-base)"
+                    ></span>
+                    <span class="token-bold">--variant-base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-base)"
+                    ></span>
+                    <span class="token-bold">Variant/base</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-faded)"
+                    ></span>
+                    <span class="token-bold">#654DC4</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-primitive token-regular"
+                    >primitive</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-faded)"
+                    ></span>
+                    <span class="token-bold">--variant-faded</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--variant-faded)"
+                    ></span>
+                    <span class="token-bold">Variant/faded</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="ds-table-row ds-table-group" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-group-label">
+                    <span class="body-small-bold">semantic</span>
+                    <img
+                      src="/assets/icons/icon-chevron-down.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+                <div class="ds-cell" role="cell"></div>
+              </div>
+
+              <div class="ds-table-row" role="row">
+                <div class="ds-cell" role="cell">
+                  <div class="ds-name">
+                    <img
+                      src="/assets/icons/icon-drift.svg"
+                      alt=""
+                      width="16"
+                      height="16"
+                    />
+                    <span class="body-small-bold">button</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="ds-value">
+                    <span
+                      class="swatch"
+                      style="background: var(--semantic-button)"
+                    ></span>
+                    <span class="token-bold">--base</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <span class="type-chip type-semantic token-regular"
+                    >semantic</span
+                  >
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--semantic-button)"
+                    ></span>
+                    <span class="token-bold">--button</span>
+                  </div>
+                </div>
+                <div class="ds-cell" role="cell">
+                  <div class="token-chip">
+                    <span
+                      class="swatch"
+                      style="background: var(--semantic-button)"
+                    ></span>
+                    <span class="token-bold">button</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" aria-labelledby="guidelines-title">
+          <div class="ds-guidelines-copy">
+            <h2 id="guidelines-title" class="headline-small">
+              Color Guidelines
+            </h2>
+            <div class="ds-prose">
+              <p class="body-normal">
+                Internode only accesses data explicitly authorized through
+                ordinary user OAuth permissions or, where applicable, Google
+                Workspace domain-wide delegation. Access is limited to the
+                minimum scopes required to provide clearly defined features. We
+                do not sell user data, use it for advertising, or access data
+                without user initiation.
+              </p>
+              <p class="body-normal">
+                Ordinary OAuth integrations are optional and can be revoked at
+                any time from the user’s Google Account settings. Domain-wide
+                delegation is authorized and revoked by a Google Workspace
+                administrator through the Google Admin console.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="components" aria-labelledby="components-title">
+          <div class="ds-section-head">
+            <div class="ds-tag-head" id="buttons">
+              <div class="ds-tag-title">
+                <span class="marker marker-primary">
+                  <img
+                    src="/assets/icons/icon-link.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                <h2 id="components-title" class="headline-small">Components</h2>
+              </div>
+              <a class="btn btn-tertiary" href="/home">
+                Copy prompt
+                <img
+                  src="/assets/icons/icon-arrow.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+              </a>
+            </div>
+            <p class="body-normal">
+              Use these tokens at all times. If you see any places where you
+              don’t use these tokens, try to apply, or create a new token- never
+              just leave a hard coded hex.
+            </p>
+          </div>
+
+          <div class="ds-showcase">
+            <div class="ds-showcase-block">
+              <div class="ds-btn-grid">
+                <button class="btn btn-primary" type="button">
+                  Request Demo
+                </button>
+                <button class="btn btn-primary" type="button">
+                  Request Demo
+                  <img
+                    src="/assets/icons/icon-lock.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </button>
+                <button class="btn btn-primary" type="button">
+                  <img
+                    src="/assets/icons/icon-lock.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Request Demo
+                </button>
+
+                <button class="btn btn-white" type="button">
+                  Request Demo
+                </button>
+                <button class="btn btn-white" type="button">
+                  Request Demo
+                  <img
+                    src="/assets/icons/icon-lock-primary.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </button>
+                <button class="btn btn-white" type="button">
+                  <img
+                    src="/assets/icons/icon-lock-primary.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Request Demo
+                </button>
+
+                <button class="btn btn-secondary" type="button">
+                  Request Demo
+                </button>
+                <button class="btn btn-secondary" type="button">
+                  Request Demo
+                  <img
+                    src="/assets/icons/icon-lock-dark.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </button>
+                <button class="btn btn-secondary" type="button">
+                  <img
+                    src="/assets/icons/icon-lock-dark.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Request Demo
+                </button>
+
+                <button class="btn btn-tertiary" type="button">Step back</button>
+                <button class="btn btn-tertiary" type="button">
+                  Request Demo
+                  <img
+                    src="/assets/icons/icon-arrow.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </button>
+                <button class="btn btn-tertiary" type="button">
+                  <img
+                    src="/assets/icons/icon-arrow-left.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Step back
+                </button>
+              </div>
+            </div>
+
+            <div class="ds-showcase-block" id="chips">
+              <div class="ds-chip-row">
+                <span class="chip body-small">Styles</span>
+                <span class="chip chip-rules body-small">
+                  <img
+                    src="/assets/icons/icon-style.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Styles
+                </span>
+                <span class="chip chip-rules body-small">
+                  <img
+                    src="/assets/icons/icon-variant.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Components
+                </span>
+                <span class="chip chip-rules body-small">
+                  <img
+                    src="/assets/icons/icon-pattern.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Patterns
+                </span>
+                <span class="chip chip-rules body-small">
+                  <img
+                    src="/assets/icons/icon-guidelines.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                  Rules
+                </span>
+                <span class="type-chip type-primitive token-regular"
+                  >primitive</span
+                >
+                <span class="type-chip type-semantic token-regular"
+                  >semantic</span
+                >
+                <span class="token-chip">
+                  <span
+                    class="swatch"
+                    style="background: var(--primary-base)"
+                  ></span>
+                  <span class="token-bold">--primary-base</span>
+                </span>
+                <span class="status-tag">
+                  <span class="source-dot" aria-hidden="true"></span>
+                  <p class="body-small">Active</p>
+                </span>
+              </div>
+            </div>
+
+            <div class="ds-showcase-block" id="markers">
+              <div class="ds-marker-row">
+                <span class="marker marker-primary">
+                  <img
+                    src="/assets/icons/icon-variant.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                <span class="marker marker-error">
+                  <img
+                    src="/assets/icons/icon-variant-error.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                <span class="marker marker-soon">
+                  <img
+                    src="/assets/icons/icon-variant-soon.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                <img
+                  src="/assets/icons/icon-marker-dots.svg"
+                  alt=""
+                  width="30"
+                  height="6"
+                />
+                <span class="swatch" style="background: var(--primary-base)"></span>
+              </div>
+            </div>
+
+            <div class="ds-showcase-block" id="logo">
+              <a class="logo" href="/home">
+                <img
+                  src="/assets/gruum-mark.svg"
+                  alt=""
+                  width="32"
+                  height="32"
+                />
+                <img
+                  src="/assets/gruum-wordmark.svg"
+                  alt="Gruum"
+                  width="83.7616"
+                  height="19.7101"
+                />
+              </a>
+            </div>
+
+            <div class="ds-showcase-block">
+              <nav class="ds-menu-sample" aria-label="Menu items">
+                <div class="ds-nav-parent">
+                  <span class="ds-nav-parent-label body-normal-bold">
+                    <img
+                      src="/assets/icons/icon-nav-style.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                    Foundation
+                  </span>
+                  <img
+                    src="/assets/icons/icon-chevron-down.svg"
+                    alt=""
+                    width="20"
+                    height="20"
+                  />
+                </div>
+                <a class="ds-nav-child body-normal-bold" href="#colors">Colors</a>
+              </nav>
+            </div>
+
+            <div class="ds-showcase-block" id="faq">
+              <div class="ds-faq-sample">
+                <details class="faq-item">
+                  <summary>
+                    <span class="body-normal-bold">For designers</span>
+                    <img
+                      class="faq-icon-closed"
+                      src="/assets/icons/icon-plus.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                    <img
+                      class="faq-icon-open"
+                      src="/assets/icons/icon-close.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </summary>
+                  <p class="body-normal">
+                    Stop hunting for what components and styles engineers and
+                    agents are actually using. Spend less time manually checking
+                    for hidden drift.
+                  </p>
+                </details>
+                <details class="faq-item" open>
+                  <summary>
+                    <span class="body-normal-bold">For designers</span>
+                    <img
+                      class="faq-icon-closed"
+                      src="/assets/icons/icon-plus.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                    <img
+                      class="faq-icon-open"
+                      src="/assets/icons/icon-close.svg"
+                      alt=""
+                      width="20"
+                      height="20"
+                    />
+                  </summary>
+                  <p class="body-normal">
+                    Stop hunting for what components and styles engineers and
+                    agents are actually using. Spend less time manually checking
+                    for hidden drift.
+                  </p>
+                </details>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="ds-section" id="patterns" aria-labelledby="patterns-title">
+          <div class="ds-section-head">
+            <div class="ds-tag-head" id="tag-section">
+              <div class="ds-tag-title">
+                <span class="marker marker-primary">
+                  <img
+                    src="/assets/icons/icon-link.svg"
+                    alt=""
+                    width="16"
+                    height="16"
+                  />
+                </span>
+                <h2 id="patterns-title" class="headline-small">Patterns</h2>
+              </div>
+              <button class="btn btn-tertiary" type="button">
+                Copy prompt
+                <img
+                  src="/assets/icons/icon-arrow.svg"
+                  alt=""
+                  width="16"
+                  height="16"
+                />
+              </button>
+            </div>
+            <p class="body-normal">
+              Use these tokens at all times. If you see any places where you
+              don’t use these tokens, try to apply, or create a new token- never
+              just leave a hard coded hex.
+            </p>
+          </div>
+
+          <div class="ds-showcase">
+            <div class="ds-showcase-block" id="text-box">
+              <div class="ds-guidelines-copy">
+                <h2 class="headline-small">Overview of Data Access</h2>
+                <div class="ds-prose">
+                  <p class="body-normal">
+                    Internode only accesses data explicitly authorized through
+                    ordinary user OAuth permissions or, where applicable, Google
+                    Workspace domain-wide delegation. Access is limited to the
+                    minimum scopes required to provide clearly defined features.
+                    We do not sell user data, use it for advertising, or access
+                    data without user initiation.
+                  </p>
+                  <p class="body-normal">
+                    Ordinary OAuth integrations are optional and can be revoked
+                    at any time from the user’s Google Account settings.
+                    Domain-wide delegation is authorized and revoked by a Google
+                    Workspace administrator through the Google Admin console.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="ds-showcase-block" id="pricing">
+              <article class="card card-pad pricing-card">
+                <div class="pricing-card-head">
+                  <h3 class="headline-secondary">Small Teams</h3>
+                  <p class="body-normal">
+                    Everything you need to ship consistent work, fast.
+                  </p>
+                </div>
+                <div class="ds-feature-list">
+                  <div class="feature-row">
+                    <span class="marker marker-primary">
+                      <img
+                        src="/assets/icons/icon-variant.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                      />
+                    </span>
+                    <p class="body-normal-bold">Max 2 projects</p>
+                  </div>
+                  <div class="feature-row">
+                    <span class="marker marker-primary">
+                      <img
+                        src="/assets/icons/icon-variant.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                      />
+                    </span>
+                    <p class="body-normal-bold">Max 3 editors</p>
+                  </div>
+                  <div class="feature-row">
+                    <span class="marker marker-primary">
+                      <img
+                        src="/assets/icons/icon-variant.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                      />
+                    </span>
+                    <p class="body-normal-bold">All features included</p>
+                  </div>
+                  <div class="feature-row">
+                    <span class="marker marker-primary">
+                      <img
+                        src="/assets/icons/icon-variant.svg"
+                        alt=""
+                        width="16"
+                        height="16"
+                      />
+                    </span>
+                    <p class="body-normal-bold">URL, Figma and code</p>
+                  </div>
+                </div>
+                <div class="pricing-footer">
+                  <a class="btn btn-primary btn-block" href="/">
+                    Request Early Access
+                  </a>
+                  <p class="body-normal pricing-note">$10 per editor</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>

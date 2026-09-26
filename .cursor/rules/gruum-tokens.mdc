@@ -1,0 +1,30 @@
+---
+description: Use Gruum Figma tokens from tokens.css as the only colors, type, numbers, and shadows
+alwaysApply: true
+---
+
+# Gruum design tokens
+
+`tokens.css` is the source of truth, copied from the Gruum-UI-Design Figma file. Use these custom properties and classes for all new UI. Do not introduce new colors, type scales, radii, or shadows unless they are added to `tokens.css` from Figma.
+
+## Colors
+
+`var(--background)` `--white` `--dark` `--primary-base` `--primary-light` `--error-base` `--error-light` `--error-faded` `--text-primary` `--text-secondary` `--text-tertiary` `--text-light` `--fade-dark-10` `--fade-dark-15` `--fade-dark-20` `--fade-white-60` `--green-base` `--green-faded` `--variant-base` `--variant-faded` `--semantic-button`
+
+## Numbers
+
+`var(--xsmall)` `2px`, `--number` `6px`, `--corner-small` `8px`, `--corner-medium` `10px`, `--corner-full` `999px`
+
+## Text
+
+Classes: `.headline-main` `.headline-secondary` `.headline-small` `.body-large-bold` `.body-normal` `.body-normal-bold` `.body-small` `.body-small-bold` `.body-xsmall` `.token-regular` `.token-bold`
+
+Headlines use PP Neue Montreal (fallback Inter). Body uses Inter. Token/code uses DM Mono.
+
+## Effects
+
+`var(--shadow-card-hard)` `--shadow-card-soft` `--shadow-button-primary` `--shadow-button-white` `--shadow-button-secondary` `--shadow-modal-base`
+
+## Stack
+
+Static Vite MPA, HTML/CSS/JS. Do not add Tailwind unless asked.
