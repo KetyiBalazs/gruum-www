@@ -73,8 +73,8 @@
   color: var(--text-secondary);
 }
 
-.ds-nav-child:hover,
-.ds-nav-child:focus-visible {
+a.ds-nav-child:hover,
+a.ds-nav-child:focus-visible {
   color: var(--text-primary);
 }
 
@@ -295,131 +295,7 @@
   color: var(--text-secondary);
 }
 
-.ds-showcase {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  width: 100%;
-}
-
-.ds-showcase-block {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
-
-.ds-tag-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  width: 100%;
-}
-
-.ds-tag-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.ds-tag-title h2 {
-  margin: 0;
-}
-
-.ds-btn-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px 16px;
-  width: 100%;
-}
-
-.ds-btn-grid .btn:not(.btn-tertiary) {
-  width: 100%;
-}
-
-.ds-chip-row,
-.ds-marker-row {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px;
-}
-
-.ds-menu-sample {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 160px;
-}
-
-.ds-faq-sample {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-  width: 100%;
-}
-
-.faq-item .faq-icon-open {
-  display: none;
-}
-
-.faq-item[open] .faq-icon-closed {
-  display: none;
-}
-
-.faq-item[open] .faq-icon-open {
-  display: block;
-}
-
-.pricing-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 32px;
-  max-width: 329px;
-}
-
-.pricing-card-head {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  width: 100%;
-}
-
-.pricing-card-head h3,
-.pricing-card-head p {
-  margin: 0;
-}
-
-.pricing-card-head p,
-.pricing-note {
-  color: var(--text-secondary);
-}
-
-.pricing-note {
-  margin: 0;
-  text-align: center;
-  width: 100%;
-}
-
-.pricing-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  width: 100%;
-}
-
-.ds-feature-list {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
-  width: 100%;
-}
+@media (max-width: 1120px) {
   .ds-shell {
     grid-template-columns: 1fr;
   }
@@ -455,9 +331,5 @@
 
   .ds-hero-top {
     flex-direction: column;
-  }
-
-  .ds-btn-grid {
-    grid-template-columns: 1fr;
   }
 }
