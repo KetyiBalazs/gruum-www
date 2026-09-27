@@ -1,0 +1,48 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+}
+
+.playground-body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: var(--background);
+}
+
+.playground {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.playground-stack {
+  position: relative;
+  width: 280px;
+  height: 280px;
+}
+
+.playground-rect {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+}
+
+.playground-rect-blue {
+  right: 0;
+  bottom: 0;
+  background: var(--primary-base);
+}
+
+.playground-rect-error {
+  top: 0;
+  left: 0;
+  background: var(--error-faded);
+}

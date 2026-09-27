@@ -23,6 +23,8 @@
     { "source": "/contact", "destination": "/contact.html" },
     { "source": "/contact/", "destination": "/contact.html" },
     { "source": "/design-system", "destination": "/design-system.html" },
-    { "source": "/design-system/", "destination": "/design-system.html" }
+    { "source": "/design-system/", "destination": "/design-system.html" },
+    { "source": "/playground", "destination": "/playground.html" },
+    { "source": "/playground/", "destination": "/playground.html" }
   ]
 }

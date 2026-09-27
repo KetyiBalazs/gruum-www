@@ -8,6 +8,8 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
 }
 
 .legal-main {
@@ -15,6 +17,7 @@
   flex-direction: column;
   width: 800px;
   max-width: 100%;
+  min-width: 0;
   padding-bottom: 120px;
 }
 
@@ -49,6 +52,7 @@
 .legal-prose p,
 .legal-prose ul {
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .legal-lede p,
@@ -116,12 +120,16 @@
 @media (max-width: 720px) {
   .legal-header,
   .legal-section {
-    padding-inline: 20px;
+    padding: 40px 20px;
   }
 
   .legal-title-row {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .legal-title-row .btn {
+    width: 100%;
   }
 
   .legal-main {

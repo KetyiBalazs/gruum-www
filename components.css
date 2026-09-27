@@ -9,6 +9,8 @@
 html,
 body {
   margin: 0;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 .skip-link {
@@ -181,6 +183,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: var(--corner-small);
+  min-width: 0;
 }
 
 .ds-badge {
@@ -192,6 +195,9 @@ body {
   background: var(--white);
   border: 1px dashed var(--fade-dark-10);
   border-radius: var(--corner-small);
+  box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
 }
 
 .ds-badge-name,
@@ -338,6 +344,11 @@ body {
   gap: 16px;
   list-style: none;
   cursor: pointer;
+}
+
+.faq-item summary span {
+  min-width: 0;
+  overflow-wrap: break-word;
 }
 
 .faq-item summary::-webkit-details-marker {

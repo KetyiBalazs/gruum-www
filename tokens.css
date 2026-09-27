@@ -97,6 +97,8 @@
     inset 0 0 10px 0 #1c8ef126, 0 0 2px 0 #00000066, 0 2px 8px 0 #0000001a; /* Button/White Inner Shadow */
   --shadow-button-secondary: inset 0 0 4px 0 #ffffff80; /* Button/Secondary Shadow */
   --shadow-modal-base: 0 0 100px 0 #0000001a, 0 2px 10px 0 #00000026; /* Modal/Base Shadow */
+
+  color: var(--text-primary);
 }
 
 /* Text styles */
@@ -106,6 +108,7 @@
   font-weight: var(--headline-main-weight);
   line-height: var(--headline-main-line);
   letter-spacing: var(--headline-main-spacing);
+  color: var(--text-primary);
 }
 
 .headline-secondary {

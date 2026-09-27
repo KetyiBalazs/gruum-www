@@ -9,6 +9,8 @@
   grid-template-columns: 240px 880px;
   justify-content: center;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
 }
 
 .ds-sidebar {
@@ -59,6 +61,13 @@
   justify-content: space-between;
 }
 
+.ds-nav-parent-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+}
+
 .ds-nav-parent-label img,
 .ds-nav-parent > img,
 .ds-name img,
@@ -101,6 +110,8 @@ a.ds-nav-child:focus-visible {
 .ds-main {
   display: flex;
   flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .ds-hero {
@@ -136,6 +147,7 @@ a.ds-nav-child:focus-visible {
 .ds-guidelines-copy h2,
 .ds-guidelines-copy p {
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .ds-hero-copy p {
@@ -170,6 +182,7 @@ a.ds-nav-child:focus-visible {
 
 .ds-lock-row {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 8px;
@@ -222,12 +235,15 @@ a.ds-nav-child:focus-visible {
 
 .ds-table-wrap {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
 }
 
 .ds-table {
   width: 800px;
-  max-width: 100%;
   min-width: 800px;
   overflow: hidden;
   background: var(--white);
@@ -252,7 +268,34 @@ a.ds-nav-child:focus-visible {
 }
 
 .ds-table-group {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
   background: var(--text-light);
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.ds-table-group:focus-visible {
+  outline: 2px solid var(--primary-base);
+  outline-offset: -2px;
+}
+
+.ds-table-group .ds-group-label img {
+  display: block;
+  transition: transform 0.15s ease;
+}
+
+.ds-table-group.is-collapsed .ds-group-label img {
+  transform: rotate(180deg);
+}
+
+.ds-table-row[hidden] {
+  display: none;
 }
 
 .ds-cell {
@@ -297,13 +340,14 @@ a.ds-nav-child:focus-visible {
 
 @media (max-width: 1120px) {
   .ds-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .ds-sidebar {
     position: static;
     height: auto;
     width: 100%;
+    min-width: 0;
     padding: 40px 40px 24px;
     gap: 40px;
   }
@@ -326,10 +370,19 @@ a.ds-nav-child:focus-visible {
   .ds-hero,
   .ds-lock,
   .ds-section {
-    padding-inline: 20px;
+    padding: 40px 20px;
+  }
+
+  .ds-hero,
+  .ds-section {
+    gap: 32px;
   }
 
   .ds-hero-top {
     flex-direction: column;
+  }
+
+  .ds-hero-top .btn {
+    width: 100%;
   }
 }
