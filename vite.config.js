@@ -5,6 +5,7 @@ const prettyPaths = {
   "/home": "/home.html",
   "/terms": "/terms.html",
   "/privacy": "/privacy.html",
+  "/contact": "/contact.html",
   "/design-system": "/design-system.html",
 };
 

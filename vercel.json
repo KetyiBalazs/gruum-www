@@ -20,6 +20,8 @@
     { "source": "/terms/", "destination": "/terms.html" },
     { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/privacy/", "destination": "/privacy.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/contact/", "destination": "/contact.html" },
     { "source": "/design-system", "destination": "/design-system.html" },
     { "source": "/design-system/", "destination": "/design-system.html" }
   ]

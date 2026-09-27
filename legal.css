@@ -45,13 +45,49 @@
 .legal-lede h1,
 .legal-lede p,
 .legal-section h2,
-.legal-prose p {
+.legal-prose h3,
+.legal-prose p,
+.legal-prose ul {
   margin: 0;
 }
 
 .legal-lede p,
-.legal-prose p {
+.legal-prose p,
+.legal-prose li {
   color: var(--text-secondary);
+}
+
+.legal-prose h3 {
+  color: var(--text-primary);
+}
+
+.legal-prose ul {
+  list-style: disc;
+  padding-left: 1.2em;
+}
+
+.legal-prose li + li {
+  margin-top: var(--corner-small);
+}
+
+.legal-prose a {
+  color: var(--primary-base);
+  text-decoration: none;
+}
+
+.legal-prose a:hover,
+.legal-prose a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.legal-prose strong {
+  color: var(--text-primary);
+  font-weight: var(--body-normal-bold-weight);
+}
+
+.legal-caps {
+  letter-spacing: 0.01em;
 }
 
 .legal-title-row .btn {
