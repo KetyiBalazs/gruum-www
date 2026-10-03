@@ -1,11 +1,11 @@
 ---
-description: Use Gruum Figma tokens from tokens.css as the only colors, type, numbers, and shadows
+description: Use Grum Figma tokens from tokens.css as the only colors, type, numbers, and shadows
 alwaysApply: true
 ---
 
-# Gruum design tokens
+# Grum design tokens
 
-`tokens.css` is the source of truth, copied from the Gruum-UI-Design Figma file. Use these custom properties and classes for all new UI. Do not introduce new colors, type scales, radii, or shadows unless they are added to `tokens.css` from Figma.
+`tokens.css` is the source of truth, copied from the Grum-UI-Design Figma file. Use these custom properties and classes for all new UI. Do not introduce new colors, type scales, radii, or shadows unless they are added to `tokens.css` from Figma.
 
 ## Colors
 

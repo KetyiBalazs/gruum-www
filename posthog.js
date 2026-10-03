@@ -1,5 +1,5 @@
 /**
- * Marketing-site PostHog (separate Cloud project from gruum-app).
+ * Marketing-site PostHog (separate Cloud project from the Grum app).
  *
  * Paste the public project token below. Sessions use cookie/localStorage
  * distinct ids — adding or removing HTML pages does not break session
