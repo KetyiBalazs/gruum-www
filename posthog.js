@@ -5,8 +5,10 @@
  * distinct ids — adding or removing HTML pages does not break session
  * continuity; removed URLs simply stop producing new $pageview events.
  *
- * Session recording stays off here (product replay lives in the app project).
- * Init is skipped on localhost / *.local so local Vite never sends events.
+ * Session recording is on, with form inputs masked. This is a separate
+ * PostHog project from the app, so a marketing visitor is not the same person
+ * as a signed-in app user. Init is skipped on localhost / *.local so local
+ * Vite never sends events.
  */
 (function () {
   var KEY = "phc_BkJexqroKRhmm4qyZEycA9qWcV9xhUUzPuwV3Z4Hf8nD";
@@ -85,6 +87,9 @@
     capture_pageview: "history_change",
     capture_pageleave: true,
     persistence: "localStorage+cookie",
-    disable_session_recording: true,
+    disable_session_recording: false,
+    session_recording: {
+      maskAllInputs: true,
+    },
   });
 })();
