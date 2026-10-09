@@ -1,5 +1,5 @@
 {
-  "name": "gruum-www",
+  "name": "@verify/grum-www",
   "private": true,
   "scripts": {
     "dev": "vite",
